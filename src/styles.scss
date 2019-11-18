@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'inter';
+  src:
+      url('./assets/fonts/inter-regular.woff') format('woff'),
+      url('./assets/fonts/inter-regular.woff2') format('woff2'),
+      url('./assets/fonts/inter-regular.eot') format('eot'),
+      url('./assets/fonts/inter-regular.otf') format('otf'),
+      url('./assets/fonts/inter-regular.ttf') format('ttf');
+}
+
+* {
+  font-family: 'inter';
+  outline: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height:100%;
+  width: 100%;
+}
