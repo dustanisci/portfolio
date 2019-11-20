@@ -29,11 +29,12 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/assets/scss"
+                "src/assets"
               ]
             },
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
           },
@@ -99,11 +100,12 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/assets/scss"
+                "src/assets",
               ]
             },
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
           }
