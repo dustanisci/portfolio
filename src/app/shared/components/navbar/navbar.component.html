@@ -1,0 +1,34 @@
+<div class="position-fixed w-100">
+  <div class="sub-container pt-3 pb-3 d-flex align-items-center">
+    <div class="logo">
+      <a href="/">
+        <img src="assets/img/logo.png" />
+      </a>
+    </div>
+
+    <div *ngIf="isMobile" class="icons-mobile text-right">
+      <i *ngIf="isMenuOpen === false" (click)="isMenuOpen = true" class="icon-reorder"></i>
+      <i *ngIf="isMenuOpen === true" (click)="isMenuOpen = false" class="icon-remove"></i>
+    </div>
+
+    <nav [ngStyle]="isMenuOpen ? {'width' : '100%' } : {}" class="nav-right text-right">
+      <a [ngClass]="{'isMenuOpen': isMenuOpen}" class="ml-5" href="javascript:void(0)" (click)="isMenuOpen = false; false">Home</a>
+      <a [ngClass]="{'isMenuOpen': isMenuOpen}" class="ml-5" href="#technologies">Technologies</a>
+      <a [ngClass]="{'isMenuOpen': isMenuOpen}" class="ml-5" href="#about">About</a>
+      <a [ngClass]="{'isMenuOpen': isMenuOpen}" class="ml-5" href="#portfolio">Portfolio</a>
+      <a [ngClass]="{'isMenuOpen': isMenuOpen}" class="ml-5" href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<nav class="nav-left" [ngStyle]="isMenuOpen ? {'width' : '50px' } : {}">
+  <a [ngClass]="{'isMenuOpen': isMenuOpen}" href="https://www.linkedin.com/in/dustanisci/" target="_blank">
+    <i class="icon-linkedin-sign"></i>
+  </a>
+  <a [ngClass]="{'isMenuOpen': isMenuOpen}" href="https://github.com/dustanisci" target="_blank">
+    <i class="icon-github-alt"></i>
+  </a>
+  <a [ngClass]="{'isMenuOpen': isMenuOpen}" href="#contact">
+    <i class="icon-envelope"></i>
+  </a>
+</nav>
