@@ -9,7 +9,7 @@ import { TechnologiesComponent } from './section/technologies/technologies.compo
 import { ContainerFluidComponent } from './shared/components/container-fluid/container-fluid.component';
 import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NavbarComponent } from '@shared/components/navbar/navbar.component';
-import { ArrivalPointComponent } from './shared/arrival-point/arrival-point.component';
+import { ScrollPointComponent } from './shared/components/scroll-point/scroll-point.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { ArrivalPointComponent } from './shared/arrival-point/arrival-point.comp
     ContainerFluidComponent,
     FooterComponent,
     NavbarComponent,
-    ArrivalPointComponent
+    ScrollPointComponent
   ],
   imports: [
     BrowserModule,
