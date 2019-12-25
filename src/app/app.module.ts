@@ -10,6 +10,7 @@ import { ContainerFluidComponent } from './shared/components/container-fluid/con
 import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NavbarComponent } from '@shared/components/navbar/navbar.component';
 import { ScrollPointComponent } from './shared/components/scroll-point/scroll-point.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { ScrollPointComponent } from './shared/components/scroll-point/scroll-po
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
   ],
