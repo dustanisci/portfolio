@@ -5,7 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContainerAboutComponent } from './container-about/container-about.component';
 import { ContainerContactComponent } from './container-contact/container-contact.component';
 import { ContainerPortfolioComponent } from './container-portfolio/container-portfolio.component';
-import { ContainerTechnologiesComponent } from './container-technologies/container-technologies.component';
+import { FooterComponent } from '@shared/components/footer/footer.component';
+import { NavbarComponent } from '@shared/components/navbar/navbar.component';
+import { ContainerGeometricComponent } from './shared/components/container-geometric/container-geometric.component';
+import { ContainerSkillsComponent } from './container-skills/container-skills.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { ContainerTechnologiesComponent } from './container-technologies/contain
     ContainerAboutComponent,
     ContainerContactComponent,
     ContainerPortfolioComponent,
-    ContainerTechnologiesComponent,
+    ContainerSkillsComponent,
+    FooterComponent,
+    NavbarComponent,
+    ContainerGeometricComponent
   ],
   imports: [
     BrowserModule,

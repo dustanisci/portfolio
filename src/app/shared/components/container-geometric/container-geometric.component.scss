@@ -1,0 +1,28 @@
+@import "./../assets/scss/palette.scss";
+
+.container-geometric {
+  .geometric {
+    height             : 100px;
+    background-repeat  : no-repeat;
+    background-position: center top;
+    background-size    : 100% 100%;
+    content            : ' ';
+    top                : 0;
+  }
+
+  .subcontainer-geometric {
+    padding-top: 100px;
+  }
+}
+
+.pink {
+  background: palette-color('primary', '4');
+}
+
+.blue {
+  background: palette-color('primary', '2');
+}
+
+.light-blue {
+  background: palette-color('primary', '3');
+}

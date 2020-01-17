@@ -1,0 +1,9 @@
+<div class="container-geometric w-100 p-relative">
+  <div [ngStyle]="{'background-image': 'url(' + _background + ')', 'transform' : reverse ? 'scaleX(-1)' : 'scaleX(1)' }"
+    class="geometric w-100 p-absolute"></div>
+  <div [ngStyle]="{'color': color}" class="subcontainer-geometric w-100">
+    <div [ngClass]="backgroundColor === 1 ? 'blue' : (backgroundColor === 2 ? 'light-blue' : 'pink')" class="d-block p-relative w-100">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

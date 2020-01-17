@@ -1,0 +1,113 @@
+@import "./../assets/scss/palette.scss";
+
+nav {
+  background: #FFF;
+  left      : 0;
+  top       : 0;
+  z-index   : 2;
+
+  .container {
+    flex-direction: row;
+    align-items   : center;
+
+    @media only screen and (max-width: 700px) {
+      margin-left : 25px;
+      margin-right: 25px;
+    }
+
+    >div:nth-of-type(1) {
+      img {
+        width: 150px;
+
+        @media only screen and (max-width: 700px) {
+          width: 130px;
+        }
+      }
+    }
+
+    .icon-mobile {
+      display  : none;
+      right    : 25px;
+      font-size: 30px;
+      z-index  : 1;
+
+      .icon-reorder {
+        color: palette-color('primary', '4');
+      }
+
+      .icon-remove {
+        color: #FFF;
+      }
+
+      @media only screen and (max-width: 700px) {
+        display: block;
+
+      }
+    }
+
+    >div:nth-of-type(3) {
+      flex           : 1;
+      justify-content: flex-end;
+
+      ul {
+        @media only screen and (max-width: 700px) {
+          display: none;
+        }
+
+        li {
+          a {
+            color     : palette-color('primary', '1');
+            transition: 5 00ms all;
+
+            &:hover {
+              color     : palette-color('primary', '3');
+              transition: 500ms all;
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        width     : 0;
+        min-height: 100%;
+        height    : 100%;
+        transition: 500ms linear;
+        position  : fixed;
+        top       : 0;
+        left      : 0;
+
+        &.isMenuOpen {
+          width          : 100%;
+          background     : palette-color('primary', '2');
+          display        : flex;
+          flex-direction : column;
+          align-items    : center;
+          justify-content: flex-start;
+          overflow       : scroll;
+          transition     : 500ms linear;
+
+          ul {
+            display   : block;
+            margin    : 80px 0;
+            width     : 50%;
+            text-align: center;
+
+            li {
+              display       : flex;
+              flex-direction: column;
+              align-items   : center;
+
+              a {
+                color  : #FFF;
+                margin : 0;
+                margin : 15px 0;
+                padding: 15px 0;
+                width  : 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

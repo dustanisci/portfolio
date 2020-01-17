@@ -1,0 +1,7 @@
+@import "./../assets/scss/palette.scss";
+
+h3.title{
+  &:before{
+    background: palette-color('primary', '4');
+  }
+}

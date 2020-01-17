@@ -34,6 +34,9 @@
             },
             "styles": [
               "src/styles.scss",
+              "src/assets/scss/criadornaweb.scss",
+              "src/assets/scss/fonts.scss",
+              "src/assets/scss/palette.scss",
               "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
@@ -100,11 +103,13 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/assets",
+                "src/assets"
               ]
             },
             "styles": [
               "src/styles.scss",
+              "src/assets/scss/criadornaweb.scss",
+              "src/assets/scss/fonts.scss",
               "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
