@@ -9,6 +9,9 @@ import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NavbarComponent } from '@shared/components/navbar/navbar.component';
 import { ContainerGeometricComponent } from './shared/components/container-geometric/container-geometric.component';
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
+import { ApiService } from '@shared/api/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ContainerSkillsService } from './container-skills/container-skills.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { ContainerSkillsComponent } from './container-skills/container-skills.co
     ContainerGeometricComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule

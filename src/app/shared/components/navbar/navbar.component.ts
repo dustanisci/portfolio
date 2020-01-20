@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { Navbar, Target } from '@shared/interfaces/navbar';
+import { NavbarService } from './navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,32 +9,19 @@ import { Navbar, Target } from '@shared/interfaces/navbar';
 })
 export class NavbarComponent implements OnInit {
 
-  public navbar: Navbar[] = [{
-    name: 'About',
-    link: '#about',
-    target: Target.None
-  },
-  {
-    name: 'Skills',
-    link: '#skills',
-    target: Target.None
-  },
-  {
-    name: 'Portfolio',
-    link: '#portfolio',
-    target: Target.None
-  },
-  {
-    name: 'Contact',
-    link: '#contact',
-    target: Target.None
-  }];
-
+  public navbar: Navbar[] = [];
   public isMenuOpen = false;
 
-  constructor() { }
+  constructor(private navbarService: NavbarService) { }
 
   ngOnInit() {
+    this.dataNavbar();
+  }
+
+  private dataNavbar(): void {
+    this.navbarService.dataNavbar().subscribe((navbar: Navbar[]) => {
+      this.navbar = navbar;
+    });
   }
 
   @HostListener('window:resize', ['$event'])

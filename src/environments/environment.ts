@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const endpoint = {
+  technologies: 'http://www.mocky.io/v2/5e25129f2f00007c00ce2795',
+  navbar: 'http://www.mocky.io/v2/5e25127a2f00008600ce2794'
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

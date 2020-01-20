@@ -1,19 +1,44 @@
 <app-container-geometric class="mt-60 d-block" [backgroundColor]="1" color="#FFF">
+  <div class="container">
+    <h3 class="title m-0 p-0 d-block txt-center p-relative">skills</h3>
 
-<h3 class="title m-0 p-0 d-block txt-center p-relative">skills</h3>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <div class="w-50 d-inline-block">
+      <div class="w-50 d-inline-block">
+        <ul>
+          <li *ngFor="let item of frontend"> {{ item }} </li>
+        </ul>
+      </div>
 
+      <div class="w-50 d-inline-block">
+        <ul>
+          <li *ngFor="let item of backend"> {{ item }} </li>
+        </ul>
+      </div>
+
+      <div class="w-50 d-inline-block">
+        <ul>
+          <li *ngFor="let item of other"> {{ item }} </li>
+        </ul>
+      </div>
+
+      <div class="w-50 d-inline-block">
+        <ul>
+          <li *ngFor="let item of database"> {{ item }} </li>
+        </ul>
+      </div>
+
+      <div class="w-50 d-inline-block">
+        <ul>
+          <li *ngFor="let item of test"> {{ item }} </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="w-50 d-inline-block">
+      teste
+    </div>
+
+  </div>
 </app-container-geometric>
