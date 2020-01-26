@@ -9,7 +9,7 @@ import { Loader } from '@shared/models/loader';
 
 export class AppComponent implements OnInit {
 
-  private multiloader: Loader = {} as Loader;
+  public multiloader: Loader = {} as Loader;
 
   ngOnInit(): void {
     this.multiloader.about = true;

@@ -24,7 +24,7 @@ import { ReversePipe } from '@shared/pipes/reverse/reverse.pipe';
     NavbarComponent,
     ContainerGeometricComponent,
     LoaderComponent,
-    ReversePipe,
+    ReversePipe
   ],
   imports: [
     HttpClientModule,
