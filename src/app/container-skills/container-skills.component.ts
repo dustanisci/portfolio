@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Technologies } from '@shared/interfaces/technologies';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Technologies } from '@shared/models/technologies';
 import { ContainerSkillsService } from './container-skills.service';
+import { Skills } from '@shared/models/skills';
 
 @Component({
   selector: 'app-container-skills',
@@ -9,11 +10,10 @@ import { ContainerSkillsService } from './container-skills.service';
 })
 export class ContainerSkillsComponent implements OnInit {
 
-  public frontend: string[] = [];
-  public backend: string[] = [];
-  public other: string[] = [];
-  public test: string[] = [];
-  public database: string[] = [];
+  public skills: Skills = {} as Skills;
+
+  @Output()
+  public loader: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private skillService: ContainerSkillsService) { }
 
@@ -26,22 +26,23 @@ export class ContainerSkillsComponent implements OnInit {
       technology.map(resp => {
         switch (resp.type) {
           case 1:
-            this.frontend = resp.names;
+            this.skills.frontend = resp.names;
             break;
           case 2:
-            this.backend = resp.names;
+            this.skills.backend = resp.names;
             break;
           case 3:
-            this.other = resp.names;
+            this.skills.other = resp.names;
             break;
           case 4:
-            this.database = resp.names;
+            this.skills.database = resp.names;
             break;
           case 5:
-            this.test = resp.names;
+            this.skills.test = resp.names;
             break;
         }
-      });
+        this.loader.emit();
+      }, () => this.loader.emit());
     });
   }
 

@@ -9,9 +9,9 @@ import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NavbarComponent } from '@shared/components/navbar/navbar.component';
 import { ContainerGeometricComponent } from './shared/components/container-geometric/container-geometric.component';
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
-import { ApiService } from '@shared/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ContainerSkillsService } from './container-skills/container-skills.service';
+import { LoaderComponent } from './shared/components/loader/loader.component';
+import { ReversePipe } from '@shared/pipes/reverse/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,9 @@ import { ContainerSkillsService } from './container-skills/container-skills.serv
     ContainerSkillsComponent,
     FooterComponent,
     NavbarComponent,
-    ContainerGeometricComponent
+    ContainerGeometricComponent,
+    LoaderComponent,
+    ReversePipe,
   ],
   imports: [
     HttpClientModule,

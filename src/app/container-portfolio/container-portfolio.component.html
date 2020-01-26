@@ -1,1 +1,7 @@
-<p>container-portfolio works!</p>
+<div class="container mt-40">
+  <h2 class="p-relative p-0 m-0 mt-60 mb-60 title txt-left">portfolio</h2>
+  <div class="w-50 w-100-xl d-inline-block txt-center mb-80 p-relative" *ngFor="let projeto of portfolio">
+    <img class="w-75 pb-20" src="{{ projeto.galerias[0].url_galeria }}" />
+    <label class="d-block font-weight-b">Imagem (1 de {{ projeto.galerias.length }})</label>
+  </div>
+</div>

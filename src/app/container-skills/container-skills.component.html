@@ -1,44 +1,51 @@
 <app-container-geometric class="mt-60 d-block" [backgroundColor]="1" color="#FFF">
-  <div class="container">
-    <h3 class="title m-0 p-0 d-block txt-center p-relative">skills</h3>
+  <div class="container pb-60">
+    <h2 class="title m-0 p-0 d-block txt-center p-relative mb-80">skills</h2>
 
-
-
-    <div class="w-50 d-inline-block">
-      <div class="w-50 d-inline-block">
-        <ul>
-          <li *ngFor="let item of frontend"> {{ item }} </li>
-        </ul>
-      </div>
-
-      <div class="w-50 d-inline-block">
-        <ul>
-          <li *ngFor="let item of backend"> {{ item }} </li>
-        </ul>
-      </div>
-
-      <div class="w-50 d-inline-block">
-        <ul>
-          <li *ngFor="let item of other"> {{ item }} </li>
-        </ul>
-      </div>
-
-      <div class="w-50 d-inline-block">
-        <ul>
-          <li *ngFor="let item of database"> {{ item }} </li>
-        </ul>
-      </div>
-
-      <div class="w-50 d-inline-block">
-        <ul>
-          <li *ngFor="let item of test"> {{ item }} </li>
-        </ul>
-      </div>
+    <div class="w-50 w-100-sm d-inline-block mb-60">
+      <img src="./assets/img/chamaleon1.png" />
     </div>
 
-    <div class="w-50 d-inline-block">
-      teste
-    </div>
+    <div class="w-50 w-100-sm d-inline-block">
+      <div class="w-100 d-inline-block mb-20">
+        <div class="w-25 w-100-xl mt-20-xl d-inline-block">
+          <h3>Front-end</h3>
+          <ul class="m-0">
+            <li *ngFor="let item of skills.frontend"> {{ item }} </li>
+          </ul>
+        </div>
 
+        <div class="w-25 w-100-xl mt-20-xl d-inline-block">
+          <h3>Back-end</h3>
+          <ul class="m-0">
+            <li *ngFor="let item of skills.backend"> {{ item }} </li>
+          </ul>
+        </div>
+
+        <div class="w-25 w-100-xl mt-20-xl d-inline-block">
+          <h3>Testes</h3>
+          <ul>
+            <li *ngFor="let item of skills.test"> {{ item }} </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="w-100 d-inline-block ">
+        <div class="w-25 w-100-xl d-inline-block mt-20-xl">
+          <h3>Banco de Dados</h3>
+          <ul>
+            <li *ngFor="let item of skills.database"> {{ item }} </li>
+          </ul>
+        </div>
+
+        <div class="w-50 w-100-xl d-inline-block mt-20-xl">
+          <h3>Outros</h3>
+          <ul m-0>
+            <li *ngFor="let item of skills.other"> {{ item }} </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </div>
 </app-container-geometric>

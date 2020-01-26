@@ -7,8 +7,11 @@ export const environment = {
 };
 
 export const endpoint = {
-  technologies: 'http://www.mocky.io/v2/5e25129f2f00007c00ce2795',
-  navbar: 'http://www.mocky.io/v2/5e25127a2f00008600ce2794'
+  technologies: 'https://www.mocky.io/v2/5e25129f2f00007c00ce2795',
+  navbar: 'https://www.mocky.io/v2/5e25127a2f00008600ce2794',
+  about: 'https://www.mocky.io/v2/5e2d9e96300000a62fe77d34',
+  portfolio: 'http://criadornaweb.com.br/servicos/webservice/view/listarprojetos.php',
+  apiWhatsapp : "https://api.whatsapp.com/send?phone=5511959662923&text="
 }
 
 /*

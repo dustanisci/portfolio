@@ -1,0 +1,117 @@
+@import "./../assets/scss/palette.scss";
+
+app-container-geometric {
+  img.p-absolute {
+    width: 300px;
+
+    @media only screen and (max-width: 800px) {
+      width: 200px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      width: 100px;
+      margin-top: 70px;
+    }
+  }
+
+  .container {
+    h2.title {
+      &:before {
+        background: palette-color('primary', '1');
+      }
+    }
+
+    .container-fluid {
+      display       : flex;
+      align-items   : stretch;
+      flex-direction: row;
+
+      @media only screen and (max-width: 800px) {
+        display: block;
+      }
+
+      >div {
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+        flex-direction : column;
+
+        @media only screen and (max-width: 800px) {
+          display: block;
+          margin : 0 auto;
+        }
+
+
+        .container-mail {
+          display        : flex;
+          justify-content: center;
+          flex-direction : column;
+
+          a {
+            font-size     : 16pt;
+            color         : #000;
+            padding-bottom: 3px;
+            border-bottom : 2px solid palette-color('primary', '2');
+            transition    : 300ms linear;
+
+            &:hover {
+              border-bottom: 2px solid palette-color('primary', '3');
+              transition   : 300ms linear;
+            }
+          }
+        }
+
+        .container-social {
+          flex-direction : row;
+          display        : flex;
+          justify-content: center;
+
+
+          a {
+            margin    : 0 10px;
+            width     : 60px;
+            height    : 50px;
+            background: #000;
+            display   : flex;
+            cursor    : pointer;
+            transition: 300ms linear;
+
+            &:hover {
+              background: palette-color('primary', '1');
+              transition: 300ms linear;
+            }
+
+            i {
+              margin         : 0 15px;
+              font-size      : 30px;
+              color          : #FFF;
+              flex           : 1;
+              display        : flex;
+              align-items    : center;
+              justify-content: center;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    .container-img {
+      img {
+        width: 350px;
+
+        @media only screen and (max-width: 800px) {
+          width     : 250px;
+          display   : block;
+          margin    : 0 auto;
+          margin-top: 50px;
+        }
+
+        @media only screen and (max-width: 500px) {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

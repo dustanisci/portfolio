@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ContainerPortfolioService } from './container-portfolio.service';
+import { Portfolio } from '@shared/models/portfolio';
 
 @Component({
   selector: 'app-container-portfolio',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerPortfolioComponent implements OnInit {
 
-  constructor() { }
+  public portfolio: Portfolio[] = [];
+  
+  @Output()
+  public loader:EventEmitter<void> =  new EventEmitter<void>();
+
+  constructor(private portfolioService: ContainerPortfolioService) { }
 
   ngOnInit() {
+    this.dataPortfolio();
+  }
+
+  private dataPortfolio():void{
+    this.portfolioService.dataPortfolio().subscribe((portfolio: Portfolio[]) => {
+      this.portfolio = portfolio;
+      this.loader.emit();
+    }, () => this.loader);
   }
 
 }
