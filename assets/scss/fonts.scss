@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'inter';
+  src:
+    url('./../font/inter/inter-regular.woff') format('woff'),
+    url('./../font/inter/inter-regular.woff2') format('woff2'),
+    url('./../font/inter/inter-regular.eot') format('eot'),
+    url('./../font/inter/inter-regular.otf') format('otf'),
+    url('./../font/inter/inter-regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'roboto-condensed';
+  src:
+    url('./../font/roboto/robotocondensed.woff') format('woff'),
+    url('./../font/roboto/robotocondensed.woff2') format('woff2'),
+    url('./../font/roboto/robotocondensed.eot') format('eot'),
+    url('./../font/roboto/robotocondensed.otf') format('otf'),
+    url('./../font/roboto/robotocondensed.ttf') format('ttf');
+}
