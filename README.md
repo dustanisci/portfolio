@@ -1,2 +1,2 @@
-# Criadornaweb v3 - ANGULAR 8
-Site comercial e portfólio desenvolvido em Angular 8. 
+# Portfólio - Eduardo
+Meu portfólio com todos os sites públicos criados. Na construção desse portfólio foi utilizado Angular8.
