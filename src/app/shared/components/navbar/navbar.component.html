@@ -1,22 +1,14 @@
-<nav class="pt-20 pb-20 d-flex p-fixed w-100">
-  <div class="container d-flex w-100">
-    <div class="d-flex">
-      <a href="./">
-        <img src="./assets/img/logo.png" />
-      </a>
+<nav class="container-fluid position-fixed pt-2 pb-2">
+  <div class="container d-flex">
+    <div class="row">
+      <div class="col-4 justify-content-center">
+        <a href="./">
+          <img src="./assets/img/logo.png" />
+        </a>
+      </div>
     </div>
-
-    <div class="icon-mobile text-right p-fixed">
-      <i *ngIf="isMenuOpen === false" (click)="isMenuOpen = true" class="icon-reorder"></i>
-      <i *ngIf="isMenuOpen === true" (click)="isMenuOpen = false" class="icon-remove"></i>
-    </div>
-
-    <div class="d-flex" [ngClass]="{'isMenuOpen': isMenuOpen}">
-      <ul class="list-inline">
-        <li *ngFor="let item of navbar">
-          <a class="ml-40 txt-decoration-none" [href]="item.link" [target]="item.target">{{ item.name }}</a>
-        </li>
-      </ul>
+    <div class="col-8 d-flex align-items-center">
+      teste
     </div>
   </div>
 </nav>

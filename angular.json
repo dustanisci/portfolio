@@ -33,10 +33,10 @@
               ]
             },
             "styles": [
+              "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
-              "src/assets/scss/criadornaweb.scss",
-              "src/assets/scss/fonts.scss",
-              "src/assets/scss/palette.scss",
+              "src/assets/style/fonts.scss",
+              "src/assets/style/palette.scss",
               "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
@@ -107,9 +107,10 @@
               ]
             },
             "styles": [
+              "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
-              "src/assets/scss/criadornaweb.scss",
-              "src/assets/scss/fonts.scss",
+              "src/assets/style/fonts.scss",
+              "src/assets/style/palette.scss",
               "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
@@ -141,6 +142,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "criadornaweb"
 }
