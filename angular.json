@@ -33,6 +33,7 @@
               ]
             },
             "styles": [
+              "src/assets/style/portfolio.scss",
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/style/fonts.scss",
@@ -107,6 +108,7 @@
               ]
             },
             "styles": [
+              "src/assets/style/portfolio.scss",
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/style/fonts.scss",

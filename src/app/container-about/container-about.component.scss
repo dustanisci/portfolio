@@ -1,12 +1,13 @@
 @import "./../assets/style/palette.scss";
 
 .container {
-  padding-top: 100px;
+  padding-top: 130px;
 
   .container-title {
-    h2.title {
+    .portfolio-title {
       &:before {
         background: palette-color('primary', '1');
+        position:absolute;
       }
     }
   }
