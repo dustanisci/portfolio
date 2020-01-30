@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
   public multiloader: Loader = {} as Loader;
 
   ngOnInit(): void {
-    this.multiloader.about = true;
-    this.multiloader.portfolio = true;
-    this.multiloader.skills = true;
+    // this.multiloader.about = true;
+    // this.multiloader.portfolio = true;
+    // this.multiloader.skills = true;
     this.multiloader.navbar = true;
   }
 

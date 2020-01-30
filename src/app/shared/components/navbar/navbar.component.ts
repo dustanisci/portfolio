@@ -10,7 +10,7 @@ import { NavbarService } from './navbar.service';
 export class NavbarComponent implements OnInit {
 
   public navbar: Navbar[] = [];
-  public isMenuOpen = false;
+  public menuOpened = false;
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   public onResize(event) {
-    event.target.innerWidth > 700 && this.isMenuOpen === true ? this.isMenuOpen = false : '';
+    event.target.innerWidth > 700 && this.menuOpened === true ? this.menuOpened = false : '';
   }
 
 }

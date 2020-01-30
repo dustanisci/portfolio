@@ -1,25 +1,23 @@
-<nav class="container-fluid position-fixed pt-2 pb-2 bg-white">
-  <div class="row">
-    <div class="container d-flex">
-      <div class="col-4 justify-content-center">
-        <a href="./">
-          <img src="./assets/img/logo.png" />
-        </a>
-      </div>
+<nav class="container-fluid pt-3 pb-3 position-fixed">
+  <div class="container position-relative d-md-flex align-items-stretch">
 
-      <div class="col-xs-12 col-sm-12 col-md-8 d-flex align-items-center justify-content-end"
-        [ngClass]="{'isMenuOpen': isMenuOpen}">
-        <ul class="d-md-inline list-group">
-          <li class="d-inline ml-4" *ngFor="let item of navbar">
-            <a class="text-decoration-none" [href]="item.link" [target]="item.target">{{ item.name }}</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="icon-mobile text-right p-fixed">
-        <i *ngIf="isMenuOpen === false" (click)="isMenuOpen = true" class="icon-reorder"></i>
-        <i *ngIf="isMenuOpen === true" (click)="isMenuOpen = false" class="icon-remove"></i>
-      </div>
+    <div class="container-logo col-4">
+      <a href="./">
+        <img src="./assets/img/logo.png" />
+      </a>
     </div>
+
+    <ul [ngClass]="{'menuOpened': menuOpened}"
+      class="m-0 container-items col-12 col-sm-12 col-md-8 d-md-flex align-items-center justify-content-end">
+      <li class="d-md-inline d-sm-block ml-md-3 text-sm-center" *ngFor="let item of navbar">
+        <a class="pt-sm-4 pb-sm-4 text-decoration-none p-md-2" [href]="item.link" [target]="item.target">{{ item.name }}</a>
+      </li>
+    </ul>
+
+    <div class="container-icons d-md-none position-absolute d-flex align-items-center">
+      <i *ngIf="menuOpened === false" (click)="menuOpened = true" class="icon-reorder"></i>
+      <i *ngIf="menuOpened === true" (click)="menuOpened = false" class="icon-remove"></i>
+    </div>
+
   </div>
 </nav>
