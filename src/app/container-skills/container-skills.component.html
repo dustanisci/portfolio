@@ -1,50 +1,22 @@
-<app-container-geometric class="mt-60 d-block" [backgroundColor]="1" color="#FFF">
-  <div class="container pb-60">
-    <h2 class="title m-0 p-0 d-block txt-center p-relative mb-80">skills</h2>
+<app-container-geometric class="d-block" [backgroundColor]="1" color="#FFF">
+  <div class="container pb-5">
+    <div class="row">
 
-    <div class="w-50 w-100-sm d-inline-block mb-60">
-      <img src="./assets/img/chamaleon1.png" />
-    </div>
-
-    <div class="w-50 w-100-sm d-inline-block">
-      <div class="w-100 d-inline-block mb-20">
-        <div class="w-25 w-100-xl mt-20-xl d-inline-block">
-          <h3>Front-end</h3>
-          <ul class="m-0">
-            <li *ngFor="let item of skills.frontend"> {{ item }} </li>
-          </ul>
-        </div>
-
-        <div class="w-25 w-100-xl mt-20-xl d-inline-block">
-          <h3>Back-end</h3>
-          <ul class="m-0">
-            <li *ngFor="let item of skills.backend"> {{ item }} </li>
-          </ul>
-        </div>
-
-        <div class="w-25 w-100-xl mt-20-xl d-inline-block">
-          <h3>Testes</h3>
-          <ul>
-            <li *ngFor="let item of skills.test"> {{ item }} </li>
-          </ul>
-        </div>
-
+      <div class="container-title col-12 mt-5 mb-5 pt-5">
+        <h2 class="portfolio-title position-relative">skills</h2>
       </div>
-      <div class="w-100 d-inline-block ">
-        <div class="w-25 w-100-xl d-inline-block mt-20-xl">
-          <h3>Banco de Dados</h3>
-          <ul>
-            <li *ngFor="let item of skills.database"> {{ item }} </li>
-          </ul>
-        </div>
 
-        <div class="w-50 w-100-xl d-inline-block mt-20-xl">
-          <h3>Outros</h3>
-          <ul m-0>
-            <li *ngFor="let item of skills.other"> {{ item }} </li>
-          </ul>
+      <div class="container-skills col-12">
+        <div class="col-12">
+          <div class="row d-lg-flex align-items-md-center justify-content-md-between">
+            <div class="pl-0 pr-0 col-lg-2 col-md-6 pl-4 pr-3 col-sm-6 col-6 mt-4" *ngFor="let skill of skills">
+              <h3 class="font-weight-bolder">{{ skill.technology }}</h3>
+              <ul class="pt-2 pl-3">
+                <li *ngFor="let item of skill.value"> {{ item }} </li>
+              </ul>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>

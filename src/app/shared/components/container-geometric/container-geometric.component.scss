@@ -6,12 +6,12 @@
     background-repeat  : no-repeat;
     background-position: center top;
     background-size    : 100% 100%;
-    content            : ' ';
+    content            : '';
     top                : 0;
   }
 
   .subcontainer-geometric {
-    padding-top: 99px;
+    top: -1px;
   }
 }
 

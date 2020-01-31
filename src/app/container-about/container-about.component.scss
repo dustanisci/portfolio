@@ -6,8 +6,12 @@
   .container-title {
     .portfolio-title {
       &:before {
-        background: palette-color('primary', '1');
-        position:absolute;
+        background: palette-color('primary', '2');
+        position: absolute;
+      }
+
+      &::first-letter {
+        color: palette-color('primary', '2');
       }
     }
   }
@@ -16,179 +20,40 @@
     img {
       border-radius: 50%;
       width: 200px;
+      height: 200px;
       padding: 5px;
       border: 1px solid rgba(0, 0, 0, 0.30);
     }
   }
+
+  .container-description {
+
+    .item {
+      min-height: 160px;
+      font-size: 11pt;
+
+      @media only screen and (max-width: 991px) {
+        border: 1px solid rgba(0, 0, 0, 0.40);
+      }
+    }
+
+    .item:nth-of-type(1) {
+      background: palette-color('primary', '1');
+      color: #FFF;
+    }
+
+    .item:nth-of-type(2) {
+      background: palette-color('primary', '2');
+      color: #FFF;
+
+    }
+
+    .item:nth-of-type(3) {
+      background: palette-color('primary', '3');
+    }
+
+    .item:nth-of-type(4) {
+      background: palette-color('primary', '4');
+    }
+  }
 }
-
-// .container {
-//   height: 450px;
-
-//   @media only screen and (max-width: 1150px) {
-//     height: 700px;
-//   }
-
-//   @media only screen and (max-width: 700px) {
-//     height: auto;
-//   }
-
-//   div:nth-of-type(1) {
-//     @media only screen and (max-width: 800px) {
-//       text-align: left;
-//     }
-
-//     @media only screen and (max-width: 700px) {
-//       text-align: center;
-//     }
-
-//     img {
-//       border-radius: 50%;
-//       width        : 200px;
-//       padding      : 5px;
-//       border       : 1px solid rgba(0, 0, 0, 0.30);
-//     }
-
-//     h2.title {
-//       @media only screen and (max-width: 700px) {
-//         text-align: center;
-//       }
-
-//       &:before {
-//         background: palette-color('primary', '1');
-//       }
-//     }
-
-//     .container-ladder {
-//       margin-left: 200px;
-//       margin-top : 80px;
-
-//       @media only screen and (max-width: 1150px) {
-//         margin-left: 0;
-//         margin-top : 200px;
-//       }
-
-//       @media only screen and (max-width: 800px) {
-//         display: none;
-//       }
-
-//       .ladder {
-//         width     : 50px;
-//         height    : 10px;
-//         background: #000;
-
-//         &:before {
-//           content   : '';
-//           width     : 25px;
-//           height    : 5px;
-//           transform : rotate(90deg);
-//           background: #000;
-//           position  : absolute;
-//           left      : -15px;
-//           top       : 10px;
-//         }
-//       }
-
-//       .ladder:nth-of-type(2) {
-//         background: palette-color('primary', '3');
-//         z-index   : 1;
-//       }
-
-//       .ladder:last-of-type {
-//         background: #ffd700;
-//         z-index   : 1;
-//       }
-
-//     }
-//   }
-
-//   div:nth-of-type(2) {
-//     p {
-//       color      : #FFF;
-//       font-size  : 11pt;
-//       padding    : 30px;
-//       border-top : 4px solid rgba(0, 0, 0, 0.5);
-//       top        : 0;
-//       width      : 240px;
-//       height     : 100px;
-//       display    : flex;
-//       flex       : 1;
-//       align-items: center;
-
-//       @media only screen and (max-width: 700px) {
-//         position  : relative !important;
-//         top       : 0 !important;
-//         right     : 0 !important;
-//         margin-top: 20px !important;
-//         display   : block;
-//         height    : auto;
-//         margin: 0 auto;
-//         width: auto;
-//         font-size: 13pt;
-//       }
-//     }
-
-//     p:nth-of-type(1) {
-//       background: palette-color('primary-opacity-90%', '4');
-//       margin-top: -20px;
-//       color     : #000;
-//       z-index   : -1;
-//       top       : 140px;
-//       right     : 220px;
-
-//       @media only screen and (max-width: 1150px) {
-//         top  : 360px;
-//         right: 50px;
-//       }
-
-//       @media only screen and (max-width: 800px) {
-//         right: 0;
-//       }
-//     }
-
-//     p:nth-of-type(2) {
-//       background: palette-color('primary-opacity-90%', '2');
-//       top       : 260px;
-//       right     : 40px;
-
-//       @media only screen and (max-width: 1150px) {
-//         top  : 170px;
-//         right: 100px;
-//       }
-
-//       @media only screen and (max-width: 800px) {
-//         right: 0;
-//       }
-//     }
-
-//     p:nth-of-type(3) {
-//       color     : #000;
-//       z-index   : 1;
-//       background: palette-color('primary-opacity-90%', '3');
-//       top       : -15px;
-//       right     : 0;
-
-//       @media only screen and (max-width: 1150px) {
-//         top  : 510px;
-//         right: 150px;
-//       }
-
-//       @media only screen and (max-width: 800px) {
-//         right: 0;
-//       }
-//     }
-
-//     p:nth-of-type(4) {
-//       background: palette-color('primary-opacity-90%', '1');
-//       right     : 500px;
-
-//       @media only screen and (max-width: 1150px) {
-//         right: 0px;
-//       }
-
-//       @media only screen and (max-width: 800px) {
-//         right: 0;
-//       }
-//     }
-//   }
-// }

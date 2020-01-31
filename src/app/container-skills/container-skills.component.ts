@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Technologies } from '@shared/models/technologies';
 import { ContainerSkillsService } from './container-skills.service';
 import { Skills } from '@shared/models/skills';
 
@@ -10,7 +9,7 @@ import { Skills } from '@shared/models/skills';
 })
 export class ContainerSkillsComponent implements OnInit {
 
-  public skills: Skills = {} as Skills;
+  public skills: Skills[] = [];
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
@@ -22,28 +21,10 @@ export class ContainerSkillsComponent implements OnInit {
   }
 
   private dataTechnologies(): void {
-    this.skillService.dataTechnologies().subscribe((technology: Technologies[]) => {
-      technology.map(resp => {
-        switch (resp.type) {
-          case 1:
-            this.skills.frontend = resp.names;
-            break;
-          case 2:
-            this.skills.backend = resp.names;
-            break;
-          case 3:
-            this.skills.other = resp.names;
-            break;
-          case 4:
-            this.skills.database = resp.names;
-            break;
-          case 5:
-            this.skills.test = resp.names;
-            break;
-        }
-        this.loader.emit();
-      }, () => this.loader.emit());
-    });
+    this.skillService.dataTechnologies().subscribe((skills: Skills[]) => {
+      this.skills = skills;
+      this.loader.emit();
+    }, () => this.loader.emit());
   }
 
 }

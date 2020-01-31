@@ -1,30 +1,30 @@
-<!-- <div class="container mt-40">
-  <div class="w-25 w-100-xl p-relative d-inline-block txt-center">
-    <h2 class="mt-0-xl p-relative p-0 m-0 mt-20 title txt-left">about</h2>
-    <img class="mt-80" src="assets/img/about.jpg" />
-
-    <div class="container-ladder p-relative">
-      <div *ngFor="let item of [].constructor(6); let i = index"
-        [ngStyle]="{'left.px': i * 50, 'top.px' : (i * -30)}" class="ladder p-relative"></div>
-    </div>
-  </div>
-
-  <div class="w-75 w-100-xl d-inline-block">
-    <p class="m-0 p-0 txt-center d-inline-block p-absolute" *ngFor="let item of about">{{ item.description }}</p>
-  </div>
-</div> -->
-
 <div class="container">
+  <div class="row">
 
-  <div class="container-title col-12">
-    <h2 class="portfolio-title position-relative">about</h2>
-  </div>
+    <div class="container-title col-12">
+      <h2 class="portfolio-title position-relative">about</h2>
+    </div>
 
-  <div class="container-photo col-4 mt-4 pt-4 text-center">
-    <img class="mt-80" src="assets/img/about.jpg" />
-  </div>
+    <div
+      class="container-photo flex-column col-lg-5 col-sm-12 mt-4 pt-4 text-center pt-4 d-lg-flex align-items-center justify-content-center">
+      <img class="mt-80" src="assets/img/about.jpg" />
+      <blockquote class="blockquote text-lg-right mt-4 mb-0">
+        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <footer class="blockquote-footer"><cite title="Eduardo Stanisci">Eduardo Stanisci</cite></footer>
+      </blockquote>
+    </div>
 
-  <div class="container-description col-8">
+    <div class="container-description col-lg-6 offset-lg-1">
+      <div class="col-lg-12 col-sm-12 d-md-flex mt-4 pt-4 mb-4 pt-4">
+        <div class="row d-lg-flex align-items-md-center justify-content-md-center">
+          <div
+            class="mt-3 mb-3 m-lg-0 col-lg-6 item p-4 text-center align-self-stretch align-items-center justify-content-center d-flex"
+            *ngFor="let item of about">
+            {{ item.description }}
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

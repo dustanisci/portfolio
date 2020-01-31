@@ -1,4 +1,4 @@
-<nav class="container-fluid pt-3 pb-3 position-fixed">
+<nav class="container-fluid pt-3 pb-3 position-fixed bg-white">
   <div class="container">
     <div class="row position-relative d-md-flex align-items-stretch">
       
@@ -10,8 +10,8 @@
 
       <ul [ngClass]="{'menuOpened': menuOpened}"
         class="m-0 container-items col-12 col-sm-12 col-md-8 d-md-flex align-items-center justify-content-end">
-        <li class="d-md-inline d-sm-block ml-md-3 text-sm-center" *ngFor="let item of navbar">
-          <a class="pt-sm-4 pb-sm-4 text-decoration-none p-md-2" [href]="item.link"
+        <li class="d-md-inline d-sm-block d-block ml-md-3 text-center text-md-left" *ngFor="let item of navbar">
+          <a class="pt-4 pb-4 pt-md-0 pb-md-0 text-decoration-none p-md-2" [href]="item.link"
             [target]="item.target">{{ item.name }}</a>
         </li>
       </ul>
