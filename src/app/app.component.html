@@ -1,11 +1,11 @@
-<div class="app-container mh-100 d-flex">
-  <app-navbar (loader)="multiloader.navbar = false"></app-navbar>
-   <app-container-about class="mt-100" (loader)="multiloader.about = false"></app-container-about>
- <app-container-skills (loader)="multiloader.skills = false"></app-container-skills>
-   <!-- <app-container-portfolio (loader)="multiloader.portfolio = false"></app-container-portfolio>
-  <app-container-contact></app-container-contact>
-  <app-footer class="d-flex"></app-footer> -->
-</div>
+<app-navbar (loader)="multiloader.navbar = false"></app-navbar>
+<app-container-about class="mt-100" (loader)="multiloader.about = false"></app-container-about>
+<app-container-skills (loader)="multiloader.skills = false"></app-container-skills>
+<app-container-portfolio (loader)="multiloader.portfolio = false"></app-container-portfolio>
+<app-container-contact></app-container-contact>
+<app-footer></app-footer>
+
+
 <!-- <app-loader
   *ngIf="multiloader.navbar === true || multiloader.about === true || multiloader.portfolio === true || multiloader.skills === true">
 </app-loader> -->

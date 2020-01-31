@@ -6,12 +6,13 @@
   .container-title {
     .portfolio-title {
       &:before {
-        background: palette-color('primary', '2');
+        background: palette-color('primary', '3');
         position: absolute;
       }
 
       &::first-letter {
-        color: palette-color('primary', '2');
+        color: palette-color('primary', '3');
+        font-weight: bolder;
       }
     }
   }
@@ -29,7 +30,7 @@
   .container-description {
 
     .item {
-      min-height: 160px;
+      min-height: 200px;
       font-size: 11pt;
 
       @media only screen and (max-width: 991px) {

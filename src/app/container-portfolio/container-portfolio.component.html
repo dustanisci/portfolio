@@ -1,7 +1,16 @@
-<div class="container mt-40">
-  <h2 class="p-relative p-0 m-0 mt-60 mb-60 title txt-left">portfolio</h2>
-  <div class="w-50 w-100-xl d-inline-block txt-center mb-80 p-relative" *ngFor="let projeto of portfolio">
-    <img class="w-75 pb-20" src="{{ projeto.galerias[0].url_galeria }}" />
-    <label class="d-block font-weight-b">Imagem (1 de {{ projeto.galerias.length }})</label>
+<div class="container mt-4">
+
+  <div class="container-title col-12 mt-5 mb-5 pt-5 pb-3">
+    <h2 class="portfolio-title position-relative">about</h2>
   </div>
+
+  <div class="container-projects col-12">
+    <div class="row d-lg-flex align-items-md-center justify-content-md-between">
+      <div class="col-lg-5 offset-lg-1 col-12 mb-5 pb-5" *ngFor="let projeto of portfolio">
+        <img class="pb-4 img-fluid" src="{{ projeto.galerias[0].url_galeria }}" />
+        <label class="d-block font-weight-bolder text-center">Imagem 1 de {{ projeto.galerias.length }}</label>
+      </div>
+    </div>
+  </div>
+
 </div>

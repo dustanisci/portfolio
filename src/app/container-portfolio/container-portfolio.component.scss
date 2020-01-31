@@ -1,20 +1,22 @@
 @import "./../assets/style/palette.scss";
 
 .container {
-  h2.title {
-    &:before {
-      background: palette-color('primary', '3');
-    }
-  }
+  .container-title {
+    .portfolio-title {
+      &:before {
+        background: palette-color('primary', '3');
+        position: absolute;
+      }
 
-  >div {
-    label {
-      font-size : 10pt;
-      margin-top: 10px;
-    }
-
-    img {
-      border-bottom: 4px solid palette-color('primary', '2');
+      &::first-letter {
+        color: palette-color('primary', '3');
+        font-weight: bolder;
+      }
     }
   }
 }
+
+
+img {
+      border-bottom: 4px solid palette-color('primary', '2');
+    }
