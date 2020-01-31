@@ -1,8 +1,6 @@
 @import "./../assets/style/palette.scss";
 
 app-container-geometric {
-  margin-top: 80px;
-
   .container {
     .container-title {
       .portfolio-title {
@@ -20,7 +18,7 @@ app-container-geometric {
 
     .container-mail {
       a {
-        font-size: 20pt;
+        font-size: 19pt;
         color: #000;
         border-bottom: 3px solid #FFF;
         transition: 300ms linear;

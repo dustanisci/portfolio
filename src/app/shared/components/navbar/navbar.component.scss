@@ -7,6 +7,9 @@ nav {
   .container-logo {
     img {
       width: 150px;
+      @media only screen and (max-width: 767px) {
+        width: 130px;
+      }
     }
   }
 
@@ -50,6 +53,7 @@ nav {
       background: palette-color('primary', '4');
       transition: 250ms ease;
       width: 100%;
+      overflow-y:scroll;
 
       li {
         a {
@@ -65,7 +69,7 @@ nav {
     height: 100%;
 
     i {
-      font-size: 40px;
+      font-size: 30px;
 
       &.icon-reorder {
         color: palette-color('primary', '1');

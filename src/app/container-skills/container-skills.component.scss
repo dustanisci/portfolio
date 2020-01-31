@@ -1,10 +1,7 @@
 @import "./../assets/style/palette.scss";
 
 app-container-geometric {
-  margin-top: 80px;
-
   .container {
-
     .container-title {
       .portfolio-title {
         &:before {
@@ -26,7 +23,7 @@ app-container-geometric {
           padding-left: 0 !important;
 
           h3 {
-            font-size: 18pt;
+            font-size: 15pt;
           }
 
           ul {
