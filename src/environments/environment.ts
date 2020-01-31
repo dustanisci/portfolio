@@ -7,10 +7,10 @@ export const environment = {
 };
 
 export const endpoint = {
-  skills: 'http://www.mocky.io/v2/5e337f553000008300d95f36',
+  skills: 'https://www.mocky.io/v2/5e337f553000008300d95f36',
   navbar: 'https://www.mocky.io/v2/5e25127a2f00008600ce2794',
-  about: 'http://www.mocky.io/v2/5e335317320000bae294d524',
-  portfolio: 'http://criadornaweb.com.br/servicos/webservice/view/listarprojetos.php'
+  about: 'https://www.mocky.io/v2/5e335317320000bae294d524',
+  portfolio: 'https://www.mocky.io/v2/5e3434273000008245d9637d'
 };
 
 /*

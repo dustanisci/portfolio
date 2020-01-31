@@ -4,19 +4,20 @@
   .container-title {
     .portfolio-title {
       &:before {
-        background: palette-color('primary', '3');
+        background: palette-color('primary', '1');
         position: absolute;
       }
 
       &::first-letter {
-        color: palette-color('primary', '3');
+        color: palette-color('primary', '1');
         font-weight: bolder;
       }
     }
   }
-}
 
-
-img {
+  .container-projects {
+    img {
       border-bottom: 4px solid palette-color('primary', '2');
     }
+  }
+}
