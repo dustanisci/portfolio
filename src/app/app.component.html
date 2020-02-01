@@ -1,11 +1,16 @@
-<app-navbar (loader)="multiloader.navbar = false"></app-navbar>
-<app-container-about class="mt-100" (loader)="multiloader.about = false"></app-container-about>
-<app-container-skills (loader)="multiloader.skills = false"></app-container-skills>
-<app-container-portfolio (loader)="multiloader.portfolio = false"></app-container-portfolio>
-<app-container-contact></app-container-contact>
-<app-footer></app-footer>
+<div
+  [ngStyle]="{'display': multiloader.navbar === false && multiloader.about === false && multiloader.portfolio === false && multiloader.skills === false ? 'block' : 'none'}">
+  <app-navbar (loader)="multiloader.navbar = false"></app-navbar>
+  <app-container-about class="mt-100" (loader)="multiloader.about = false"></app-container-about>
+  <app-container-skills (loader)="multiloader.skills = false"></app-container-skills>
+  <app-container-portfolio (loader)="multiloader.portfolio = false"></app-container-portfolio>
+  <app-container-contact></app-container-contact>
+  <app-footer></app-footer>
+</div>
 
 
-<!-- <app-loader
-  *ngIf="multiloader.navbar === true || multiloader.about === true || multiloader.portfolio === true || multiloader.skills === true">
-</app-loader> -->
+<div
+  *ngIf="multiloader.navbar === true || multiloader.about === true || multiloader.portfolio === true || multiloader.skills === true"
+  class="container-loader d-flex vh-100 position-relative align-items-center justify-content-center">
+  <div class="spinner-border text-dark" role="status"></div>
+</div>

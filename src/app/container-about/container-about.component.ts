@@ -13,7 +13,7 @@ export class ContainerAboutComponent implements OnInit {
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
-  
+
   constructor(private aboutService: ContainerAboutService) { }
 
   ngOnInit() {

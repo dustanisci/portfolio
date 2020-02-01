@@ -10,7 +10,6 @@ import { NavbarComponent } from '@shared/components/navbar/navbar.component';
 import { ContainerGeometricComponent } from './shared/components/container-geometric/container-geometric.component';
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoaderComponent } from './shared/components/loader/loader.component';
 import { ReversePipe } from '@shared/pipes/reverse/reverse.pipe';
 
 @NgModule({
@@ -23,8 +22,7 @@ import { ReversePipe } from '@shared/pipes/reverse/reverse.pipe';
     FooterComponent,
     NavbarComponent,
     ContainerGeometricComponent,
-    LoaderComponent,
-    ReversePipe
+    ReversePipe,
   ],
   imports: [
     HttpClientModule,
