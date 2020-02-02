@@ -6,22 +6,24 @@
 
   <div class="container-projects col-12">
     <div class="row d-lg-flex align-items-md-center justify-content-md-between">
-      
+
       <ng-container *ngIf="!loaderPortfolio">
         <div class="col-lg-5 col-12 mb-lg-5 pb-lg-5" *ngFor="let projeto of portfolioTwoItems">
           <img *ngIf="projeto" class="pb-4 img-fluid" src="{{ projeto.galerias[0].url_galeria }}" />
-          <label *ngIf="projeto" class="d-block font-weight-bolder text-center">Imagem 1 de {{ projeto.galerias.length }}</label>
+          <label *ngIf="projeto" class="d-block font-weight-bolder text-center">Imagem 1 de
+            {{ projeto.galerias.length }}</label>
         </div>
       </ng-container>
-      
+
 
       <div *ngIf="loaderPortfolio" class="spinner-border text-dark" role="status"></div>
     </div>
   </div>
 
   <nav class="container-pagination col-12 mt-3">
-    <ul class="pagination justify-content-center row">
-      <li *ngFor="let item of [].constructor(index); let i = index" (click)="setItemsByIndex(i)" class="display-inline-block page-item">
+    <ul #list class="pagination justify-content-center row">
+      <li *ngFor="let item of [].constructor(index); let i = index" [ngClass]="{'active': i === 0}"
+        (click)="setItemsByIndex(i); setClassActive(i+1);" class="display-inline-block page-item">
         <a class="page-link">{{ i + 1 }}</a>
       </li>
     </ul>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, Renderer, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { ContainerPortfolioService } from './container-portfolio.service';
 import { Portfolio } from '@shared/models/portfolio';
 
@@ -17,7 +17,13 @@ export class ContainerPortfolioComponent implements OnInit {
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private portfolioService: ContainerPortfolioService) { }
+  @ViewChild('list', { static: false })
+  public list: ElementRef;
+
+  constructor(
+    private renderer: Renderer2,
+    private ref: ChangeDetectorRef,
+    private portfolioService: ContainerPortfolioService) { }
 
   ngOnInit() {
     this.dataPortfolio();
@@ -42,5 +48,14 @@ export class ContainerPortfolioComponent implements OnInit {
     }, 500);
   }
 
+  private setClassActive(index: number) {
+
+    for (const element of this.list.nativeElement.querySelectorAll('li')) {
+      this.renderer.removeClass(element, 'active');
+    }
+
+    this.renderer.addClass(this.list.nativeElement.querySelector(`li:nth-of-type(${index})`), 'active');
+    this.ref.markForCheck();
+  }
 
 }
