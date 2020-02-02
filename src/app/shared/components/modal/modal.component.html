@@ -1,0 +1,39 @@
+<div [ngStyle]="{'display': showModal ? 'block' : 'none'}" class="h-100 container-modal w-100 position-fixed h-100">
+  <div class="container-fluid h-100">
+    <div class="row d-flex align-items-stretch h-100">
+
+      <div class="container-close position-fixed">
+        <i (click)="actionClose()" class="icon-remove"></i>
+      </div>
+
+      <div class="container-warning col-12 position-absolute text-center mt-5 pt-5">
+        <label>Para ter uma melhor visualização, vire o celular.</label>
+      </div>
+
+      <div class="container-elements col-12 d-flex">
+        <div class="container-arrow col-2 col-sm-1 d-flex align-items-center justify-content-center flex-column">
+          <i [ngStyle]="{'opacity': index === 0 ? '0.3' : '1'}" (click)="previousImage()" class="icon-chevron-left"></i>
+        </div>
+
+        <div class="container-img col-8 col-sm-10 d-flex align-items-center justify-content-center flex-column">
+          <img #img class="img-fluid begin-opacity-effect" *ngIf="project && project.galerias"
+            src="{{ project.galerias[index].url_galeria }}" />
+        </div>
+
+        <div class="container-arrow col-2 col-sm-1 d-flex align-items-center justify-content-center flex-column">
+          <i *ngIf="project && project.galerias" [ngStyle]="{'opacity': (this.project.galerias.length === index + 1) ? '0.3' : '1'}" (click)="nextImage()"
+            class="icon-chevron-right"></i>
+        </div>
+      </div>
+
+      <div class="container-quantity col-12 d-flex align-items-center justify-content-center">
+        <div class="row">
+          <div *ngIf="project && project.galerias" class="mb-3">
+            Imagem {{ index + 1 }} de {{ project.galerias.length }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

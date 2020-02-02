@@ -1,7 +1,7 @@
 <nav class="container-fluid pt-2 pb-2 pt-md-3 pb-md-3 position-fixed bg-white">
   <div class="container">
     <div class="row position-relative d-md-flex align-items-stretch">
-      
+
       <div class="container-logo col-4">
         <a href="./">
           <img src="./assets/img/logo.png" />
@@ -17,8 +17,8 @@
       </ul>
 
       <div class="container-icons d-md-none position-absolute d-flex align-items-center">
-        <i *ngIf="menuOpened === false" (click)="menuOpened = true" class="icon-reorder"></i>
-        <i *ngIf="menuOpened === true" (click)="menuOpened = false" class="icon-remove"></i>
+        <i *ngIf="menuOpened === false" (click)="navbarAction(true)" class="icon-reorder"></i>
+        <i *ngIf="menuOpened === true" (click)="navbarAction(false)" class="icon-remove"></i>
       </div>
 
     </div>

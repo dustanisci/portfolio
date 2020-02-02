@@ -13,6 +13,8 @@ export class ContainerPortfolioComponent implements OnInit {
   public index: number;
   public portfolioTwoItems: Portfolio[] = [];
   public loaderPortfolio = false;
+  public showModal = false;
+  private openedProject: Portfolio = {} as Portfolio;
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
@@ -49,13 +51,17 @@ export class ContainerPortfolioComponent implements OnInit {
   }
 
   private setClassActive(index: number) {
-
     for (const element of this.list.nativeElement.querySelectorAll('li')) {
       this.renderer.removeClass(element, 'active');
     }
 
     this.renderer.addClass(this.list.nativeElement.querySelector(`li:nth-of-type(${index})`), 'active');
     this.ref.markForCheck();
+  }
+
+  private actionModal(project: Portfolio) {
+    this.openedProject = project;
+    this.showModal = true;
   }
 
 }
