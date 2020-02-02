@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, Renderer, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { ContainerPortfolioService } from './container-portfolio.service';
 import { Portfolio } from '@shared/models/portfolio';
 
