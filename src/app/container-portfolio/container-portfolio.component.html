@@ -9,8 +9,8 @@
 
       <ng-container *ngIf="!loaderPortfolio">
         <div class="col-lg-5 col-12 mb-lg-5 pb-lg-5" *ngFor="let projeto of portfolioTwoItems">
-          <img *ngIf="projeto" class="pb-4 img-fluid" src="{{ projeto.galerias[0].url_galeria }}" />
-          <label *ngIf="projeto" class="d-block font-weight-bolder text-center">Imagem 1 de
+          <img *ngIf="projeto" class="pb-3 img-fluid" src="{{ projeto.galerias[0].url_galeria }}" />
+          <label *ngIf="projeto" class="pt-2 d-block font-weight-bolder text-center">Imagem 1 de
             {{ projeto.galerias.length }}</label>
         </div>
       </ng-container>
