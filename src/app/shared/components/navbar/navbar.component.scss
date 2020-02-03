@@ -53,7 +53,7 @@ nav {
       }
     }
 
-    &.menuOpened {
+    &.openMenu {
       background: palette-color('primary', '4');
       transition: 250ms ease;
       width: 100%;

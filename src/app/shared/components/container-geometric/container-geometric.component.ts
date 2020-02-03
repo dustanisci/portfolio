@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-container-geometric',
   templateUrl: './container-geometric.component.html',
   styleUrls: ['./container-geometric.component.scss']
 })
-export class ContainerGeometricComponent implements OnInit {
+export class ContainerGeometricComponent {
 
   @Input() backgroundColor: ContainerGeometric;
   @Input() color: string;

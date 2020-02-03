@@ -11,6 +11,7 @@ import { ContainerGeometricComponent } from './shared/components/container-geome
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { LanguagesComponent } from './shared/components/languages/languages.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ModalComponent } from './shared/components/modal/modal.component';
     NavbarComponent,
     ContainerGeometricComponent,
     ModalComponent,
+    LanguagesComponent,
   ],
   imports: [
     HttpClientModule,

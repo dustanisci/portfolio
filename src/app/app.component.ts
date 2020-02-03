@@ -11,6 +11,7 @@ import * as AOS from 'aos';
 export class AppComponent implements OnInit {
 
   public multiloader: Loader = {} as Loader;
+  public openedMenu = false;
 
   ngOnInit() {
     AOS.init();

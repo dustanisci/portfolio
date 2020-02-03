@@ -10,10 +10,13 @@ import { NavbarService } from './navbar.service';
 export class NavbarComponent implements OnInit {
 
   public navbar: Navbar[] = [];
-  public menuOpened = false;
+  public openMenu = false;
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
+
+  @Output()
+  public openedMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(
     private navbarService: NavbarService) { }
@@ -30,11 +33,12 @@ export class NavbarComponent implements OnInit {
   }
 
   private lockScrollBody(): void {
-    this.menuOpened ? document.querySelector('body').style.overflowY = 'hidden' : document.querySelector('body').style.overflowY = 'scroll';
+    this.openMenu ? document.querySelector('body').style.overflowY = 'hidden' : document.querySelector('body').style.overflowY = 'scroll';
   }
 
-  public navbarAction(open: boolean): void {
-    this.menuOpened = open;
+  public navbarAction(isOpen: boolean): void {
+    this.openMenu = isOpen;
+    this.openedMenu.emit(isOpen);
     this.lockScrollBody();
   }
 
@@ -45,8 +49,9 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   public onResize(event) {
-    if (event.target.innerWidth > 700 && this.menuOpened === true) {
-      this.menuOpened = false;
+    if (event.target.innerWidth > 700 && this.openMenu === true) {
+      this.openMenu = false;
+      this.openedMenu.emit(false);
       this.lockScrollBody();
     }
   }
