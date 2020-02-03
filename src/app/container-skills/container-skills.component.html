@@ -1,5 +1,5 @@
 <app-container-geometric class="d-block mt-4 mt-md-5 pt-md-4" [backgroundColor]="1" color="#FFF">
-  <div class="container pb-5">
+  <div id="skills" class="container pb-5">
     <div class="row pb-5">
 
       <div class="container-title col-12 mt-5 mb-5 pt-sm-5">
@@ -9,7 +9,8 @@
       <div class="container-skills col-12">
         <div class="col-12">
           <div class="row d-lg-flex justify-content-md-between align-items-md-stretch">
-            <div class="pl-0 pr-0 col-lg-2 col-md-6 pl-4 pr-3 col-sm-6 col-6 mt-4 d-lg-flex flex-column" *ngFor="let skill of skills">
+            <div class="pl-0 pr-0 col-lg-2 col-md-6 pl-4 pr-3 col-sm-6 col-6 mt-4 d-lg-flex flex-column"
+              *ngFor="let skill of skills">
               <h3 class="font-weight-bolder">{{ skill.technology }}</h3>
               <ul class="pt-2 pl-3">
                 <li *ngFor="let item of skill.value"> {{ item }} </li>

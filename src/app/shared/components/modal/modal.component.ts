@@ -29,7 +29,8 @@ export class ModalComponent {
 
   public index = 0;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) {
+  }
 
   private _actionModal(showModal: boolean) {
     this.showModal = showModal;
@@ -61,13 +62,11 @@ export class ModalComponent {
 
   private opacity(): void {
     this.renderer.removeClass(this.img.nativeElement, 'opacity-effect-after');
+    this.renderer.addClass(this.img.nativeElement, 'opacity-effect-before');
     setTimeout(() => {
-      this.renderer.addClass(this.img.nativeElement, 'opacity-effect-before');
-      setTimeout(() => {
-        this.renderer.removeClass(this.img.nativeElement, 'opacity-effect-before');
-        this.renderer.addClass(this.img.nativeElement, 'opacity-effect-after');
-      }, 250);
-    }, 250);
+      this.renderer.removeClass(this.img.nativeElement, 'opacity-effect-before');
+      this.renderer.addClass(this.img.nativeElement, 'opacity-effect-after');
+    }, 350);
   }
 
   private actionClose(): void {

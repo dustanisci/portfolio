@@ -2,6 +2,9 @@
 
 .container {
   padding-top: 130px;
+  @media only screen and (max-width: 767px) {
+    padding-top: 90px;
+  }
 
   .container-title {
     .portfolio-title {
