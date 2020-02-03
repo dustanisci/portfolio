@@ -9,7 +9,7 @@ import { Portfolio } from '@shared/models/portfolio';
 
 export class ModalComponent {
 
-  private showModal = false;
+  public showModal = false;
   @Input()
   public set actionModal(showModal: boolean) {
     this._actionModal(showModal);
@@ -44,7 +44,7 @@ export class ModalComponent {
     }
   }
 
-  private nextImage(): void {
+  public nextImage(): void {
     const auxIndex: number = this.index + 1;
     if (this.project.galerias[auxIndex].url_galeria.length) {
       this.opacity();
@@ -52,7 +52,7 @@ export class ModalComponent {
     }
   }
 
-  private previousImage(): void {
+  public previousImage(): void {
     const auxIndex: number = this.index - 1;
     if (this.project.galerias[auxIndex].url_galeria.length) {
       this.opacity();
@@ -69,7 +69,7 @@ export class ModalComponent {
     }, 350);
   }
 
-  private actionClose(): void {
+  public actionClose(): void {
     this._actionModal(false);
     this.renderer.removeClass(this.img.nativeElement, 'opacity-effect');
   }

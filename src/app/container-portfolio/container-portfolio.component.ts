@@ -14,7 +14,7 @@ export class ContainerPortfolioComponent implements OnInit {
   public portfolioTwoItems: Portfolio[] = [];
   public loaderPortfolio = false;
   public showModal = false;
-  private openedProject: Portfolio = {} as Portfolio;
+  public openedProject: Portfolio = {} as Portfolio;
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
@@ -41,7 +41,7 @@ export class ContainerPortfolioComponent implements OnInit {
   }
 
   // This is temporary until the service is created
-  private setItemsByIndex(index: number) {
+  public setItemsByIndex(index: number) {
     this.loaderPortfolio = true;
     setTimeout(() => {
       this.portfolioTwoItems[0] = this.portfolio[index * 2];
@@ -50,7 +50,7 @@ export class ContainerPortfolioComponent implements OnInit {
     }, 500);
   }
 
-  private setClassActive(index: number) {
+  public setClassActive(index: number) {
     for (const element of this.list.nativeElement.querySelectorAll('li')) {
       this.renderer.removeClass(element, 'active');
     }
@@ -59,7 +59,7 @@ export class ContainerPortfolioComponent implements OnInit {
     this.ref.markForCheck();
   }
 
-  private actionModal(project: Portfolio) {
+  public actionModal(project: Portfolio) {
     this.openedProject = project;
     this.showModal = true;
   }

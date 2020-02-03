@@ -33,12 +33,12 @@ export class NavbarComponent implements OnInit {
     this.menuOpened ? document.querySelector('body').style.overflowY = 'hidden' : document.querySelector('body').style.overflowY = 'scroll';
   }
 
-  private navbarAction(open: boolean): void {
+  public navbarAction(open: boolean): void {
     this.menuOpened = open;
     this.lockScrollBody();
   }
 
-  private setPositionScroll(id: string) {
+  public setPositionScroll(id: string) {
     const axisY = document.getElementById(id.replace('#', '')).getBoundingClientRect();
     window.scrollBy(0, axisY.top - 100);
   }

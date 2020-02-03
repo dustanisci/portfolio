@@ -32,18 +32,18 @@
 
     .container-img {
       img {
-        opacity: 1;
         max-width: 85%;
         max-height:90%;
+        animation: 600ms multiple-opacities;
 
         &.opacity-effect-before{
           opacity: 0;
-
+          animation: 600ms multiple-opacities;
         }
 
         &.opacity-effect-after{
           opacity: 1;
-          animation: multiple-opacities 350ms;
+          animation: 600ms multiple-opacities;
         }
       }
     }
