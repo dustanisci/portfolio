@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "criadornaweb": {
+    "portfolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/criadornaweb",
+            "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,6 +33,7 @@
               ]
             },
             "styles": [
+              "./node_modules/aos/dist/aos.css",
               "src/assets/style/portfolio.scss",
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
@@ -77,18 +78,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "criadornaweb:build"
+            "browserTarget": "portfolio:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "criadornaweb:build:production"
+              "browserTarget": "portfolio:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "criadornaweb:build"
+            "browserTarget": "portfolio:build"
           }
         },
         "test": {
@@ -108,6 +109,7 @@
               ]
             },
             "styles": [
+              "./node_modules/aos/dist/aos.css",
               "src/assets/style/portfolio.scss",
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
@@ -135,16 +137,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "criadornaweb:serve"
+            "devServerTarget": "portfolio:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "criadornaweb:serve:production"
+              "devServerTarget": "portfolio:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "criadornaweb"
+  "defaultProject": "portfolio"
 }

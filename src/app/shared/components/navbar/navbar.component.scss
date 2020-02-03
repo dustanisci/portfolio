@@ -7,6 +7,8 @@ nav {
   .container-logo {
     img {
       width: 150px;
+      animation: 600ms multiple-opacities;
+
       @media only screen and (max-width: 767px) {
         width: 130px;
       }
@@ -33,6 +35,7 @@ nav {
       }
 
       a {
+        animation: 700ms multiple-opacities;
         color: palette-color('primary', '2');
         transition: 200ms linear;
 
