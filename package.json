@@ -21,6 +21,7 @@
     "@angular/router": "^8.2.13",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "aos": "^2.3.4",
     "rxjs": "^6.4.0",
     "tslib": "^1.10.0",

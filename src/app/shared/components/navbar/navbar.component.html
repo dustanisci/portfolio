@@ -8,12 +8,16 @@
         </a>
       </div>
 
-      <ul [ngClass]="{'openMenu': openMenu}"
-        class="m-0 container-items col-12 col-sm-12 col-md-8 d-md-flex align-items-center justify-content-end">
-        <li class="d-md-inline d-sm-block d-block ml-md-3 text-center text-md-left" *ngFor="let item of navbar">
-          <a class="pt-4 pb-4 pt-md-0 pb-md-0 text-decoration-none p-md-2" (click)="navbarAction(false); setPositionScroll(item.link);">{{ item.name }}</a>
-        </li>
-      </ul>
+      <div [ngClass]="{'openMenu': openMenu}"
+        class="container-items col-12 col-sm-12 col-md-8 d-md-flex align-md-items-center justify-content-md-end">
+        <app-languages [openedMenu]="openMenu"></app-languages>
+        <ul class="d-md-flex w-100 pl-0 align-items-center justify-content-end mb-0 mt-2 mt-md-0">
+          <li class="d-md-inline d-sm-block d-block ml-md-3 text-center text-md-left" *ngFor="let item of navbar">
+            <a class="pt-4 pb-4 pl-md-3 pt-md-0 pb-md-0 text-decoration-none"
+              (click)="navbarAction(false); setPositionScroll(item.link);">{{ item.name }}</a>
+          </li>
+        </ul>
+      </div>
 
       <div class="container-icons d-md-none position-absolute d-flex align-items-center">
         <i *ngIf="openMenu === false" (click)="navbarAction(true)" class="icon-reorder"></i>

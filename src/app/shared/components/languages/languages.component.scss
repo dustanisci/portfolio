@@ -5,26 +5,32 @@
   z-index: 100;
   animation: 600ms multiple-opacities;
   opacity: 1;
+  position: fixed;
 
   @media only screen and (max-width: 767px) {
     display: none;
+    top: 0;
+    position: relative;
+    transform: none;
   }
 
   img {
-    width: 30px;
+    width: 35px;
     border: 1px solid rgba(0, 0, 0, 0.14);
+    cursor: pointer;
 
     @media only screen and (max-width: 767px) {
       width: 50px;
     }
   }
 
-  &.openedMenu{
-    display:block;
+  &.openedMenu {
+    display: block;
     opacity: 1;
+    margin: 0 auto;
   }
 
-  &.opacity{
+  &.opacity {
     opacity: 0;
     transition: opacity 600ms ease;
   }

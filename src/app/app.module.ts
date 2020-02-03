@@ -9,9 +9,11 @@ import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NavbarComponent } from '@shared/components/navbar/navbar.component';
 import { ContainerGeometricComponent } from './shared/components/container-geometric/container-geometric.component';
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { LanguagesComponent } from './shared/components/languages/languages.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,14 @@ import { LanguagesComponent } from './shared/components/languages/languages.comp
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
   ],
@@ -39,3 +48,7 @@ import { LanguagesComponent } from './shared/components/languages/languages.comp
   ]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

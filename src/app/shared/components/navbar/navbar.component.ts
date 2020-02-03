@@ -49,7 +49,7 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   public onResize(event) {
-    if (event.target.innerWidth > 700 && this.openMenu === true) {
+    if (event.target.innerWidth > 767 && this.openMenu === true) {
       this.openMenu = false;
       this.openedMenu.emit(false);
       this.lockScrollBody();

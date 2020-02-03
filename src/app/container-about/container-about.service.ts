@@ -11,6 +11,6 @@ export class ContainerAboutService {
   constructor(private apiService: ApiService) { }
 
   public dataAbout(): Observable<object> {
-    return this.apiService.get(endpoint.about);   
+    return this.apiService.get(endpoint.about);
   }
 }

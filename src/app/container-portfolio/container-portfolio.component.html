@@ -25,7 +25,7 @@
       <li *ngFor="let item of [].constructor(index); let i = index" [ngClass]="{'active': i === 0}"
         (click)="setItemsByIndex(i); setClassActive(i+1);"
         class="m-sm-0 ml-3 mr-3 mb-3 display-inline-block page-item text-center">
-        <a class="page-link">{{ i + 1 }}</a>
+        <a class="page-link" href="#portfolio">{{ i + 1 }}</a>
       </li>
     </ul>
   </nav>

@@ -16,8 +16,8 @@ export class LanguagesComponent {
   constructor() { }
 
   @HostListener('window:scroll', ['$event'])
-  public onScroll() {
-    if (window.pageYOffset >= 200 && this.openedMenu === false) {
+  public onScroll(event) {
+    if (window.pageYOffset >= 200 && this.openedMenu === false && window.innerWidth > 767) {
       this.opacity = true;
       setTimeout(() => this.hidden = true, 1000);
     } else {
