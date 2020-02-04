@@ -1,0 +1,50 @@
+@import "./../assets/style/palette.scss";
+
+.container-dropdown {
+  opacity   : 1;
+  transition: 500ms opacity linear;
+
+  * {
+    cursor: pointer;
+  }
+
+  .container-label {
+    transition: 200ms linear;
+    font-size : 9pt;
+
+    &:hover {
+      transition: 200ms linear;
+      color     : palette-color('primary', '3');
+    }
+  }
+
+  ul {
+    font-size    : 10pt;
+    opacity      : 0;
+    transition   : 500ms opacity linear;
+    list-style   : none;
+    background   : #FFF;
+    box-shadow   : 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+    li.hidden {
+      display: none;
+    }
+
+    &.active {
+      z-index   : 100;
+      opacity   : 1;
+      transition: 500ms opacity linear;
+
+      li {
+        display   : block;
+        transition: 400ms linear;
+
+        &:hover {
+          transition: 400ms linear;
+          background: palette-color('primary-opacity-10%', '2');
+        }
+      }
+    }
+  }
+}

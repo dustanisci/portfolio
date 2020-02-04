@@ -1,0 +1,9 @@
+<div class="container-dropdown">
+  <div (click)="isActive = !isActive" class="container-label d-flex align-items-center justify-content-center">
+    <label class="m-0">{{ label }}</label>
+    <i class="ml-2 icon-caret-down"></i>
+  </div>
+  <ul class="position-absolute pl-0 pt-2 pb-2 mt-2" [ngClass]="{'active': isActive}">
+    <li class="pl-4 pr-4 pt-2 pb-2" *ngFor="let item of items" [ngClass]="{'hidden': hidden}" (click)="action(item)">{{ item.label }}</li>
+  </ul>
+</div>

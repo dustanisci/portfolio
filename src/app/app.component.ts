@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Loader } from '@shared/models/loader';
 import * as AOS from 'aos';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public openedMenu = false;
 
   constructor(translate: TranslateService) {
-    translate.setDefaultLang('en');
+    translate.setDefaultLang('br');
   }
 
   ngOnInit() {

@@ -11,9 +11,9 @@ import { ContainerGeometricComponent } from './shared/components/container-geome
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
-import { LanguagesComponent } from './shared/components/languages/languages.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     NavbarComponent,
     ContainerGeometricComponent,
     ModalComponent,
-    LanguagesComponent,
+    DropdownComponent,
   ],
   imports: [
     HttpClientModule,

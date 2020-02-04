@@ -8,9 +8,10 @@
         </a>
       </div>
 
+      <app-dropdown class="position-absolute " [items]="languages" (action)="setLanguage($event)"></app-dropdown>
+
       <div [ngClass]="{'openMenu': openMenu}"
         class="container-items col-12 col-sm-12 col-md-8 d-md-flex align-md-items-center justify-content-md-end">
-        <app-languages [openedMenu]="openMenu"></app-languages>
         <ul class="d-md-flex w-100 pl-0 align-items-center justify-content-end mb-0 mt-2 mt-md-0">
           <li class="d-md-inline d-sm-block d-block ml-md-3 text-center text-md-left" *ngFor="let item of navbar">
             <a class="pt-4 pb-4 pl-md-3 pt-md-0 pb-md-0 text-decoration-none"

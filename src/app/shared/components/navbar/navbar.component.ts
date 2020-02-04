@@ -1,6 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild, HostListener, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { Navbar, Target } from '@shared/models/navbar';
 import { NavbarService } from './navbar.service';
+import { Dropdown } from '@shared/models/dropdown';
+import { Languages } from '@shared/models/languages.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,17 +12,35 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent implements OnInit {
 
-  public navbar: Navbar[] = [];
-  public openMenu = false;
-
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
   @Output()
   public openedMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  public navbar: Navbar[] = [];
+  public openMenu = false;
+  public languages: Dropdown[] = [
+    {
+      label: 'Portuguese',
+      value: 0,
+      selected: true
+    },
+    {
+      label: 'English',
+      value: 1,
+      selected: false
+    },
+    {
+      label: 'Spanish',
+      value: 2,
+      selected: false
+    }
+  ];
+
   constructor(
-    private navbarService: NavbarService) { }
+    private navbarService: NavbarService,
+    private translate: TranslateService) { }
 
   ngOnInit() {
     this.dataNavbar();
@@ -45,6 +66,18 @@ export class NavbarComponent implements OnInit {
   public setPositionScroll(id: string) {
     const axisY = document.getElementById(id.replace('#', '')).getBoundingClientRect();
     window.scrollBy(0, axisY.top - 100);
+  }
+
+  public setLanguage(value: number) {
+    console.log('rodou')
+    if (value === Languages.English) {
+      this.translate.setDefaultLang('en');
+    } else if (value === Languages.Portuguese) {
+      this.translate.setDefaultLang('br');
+    } else {
+      this.translate.setDefaultLang('esp');
+    }
+    console.log(this.translate);
   }
 
   @HostListener('window:resize', ['$event'])

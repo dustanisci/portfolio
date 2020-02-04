@@ -34,16 +34,16 @@
       img {
         max-width: 85%;
         max-height:90%;
-        animation: 600ms multiple-opacities;
+        animation: 600ms multiple-opacities-on;
 
         &.opacity-effect-before{
           opacity: 0;
-          animation: 600ms multiple-opacities;
+          animation: 600ms multiple-opacities-on;
         }
 
         &.opacity-effect-after{
           opacity: 1;
-          animation: 600ms multiple-opacities;
+          animation: 600ms multiple-opacities-on;
         }
       }
     }
