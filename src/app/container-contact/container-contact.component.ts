@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { Languages } from '@shared/models/languages.enum';
+import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,21 +6,18 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './container-contact.component.html',
   styleUrls: ['./container-contact.component.scss']
 })
-export class ContainerContactComponent {
+export class ContainerContactComponent implements OnInit {
+
+  @Input()
+  public translate: TranslateService;
 
   public title: string;
-  @Input()
-  public set actionLanguage(language: Languages) {
-    this.translations();
+
+  constructor() {
   }
 
-  constructor(
-    private translate: TranslateService) {
-    this.translations();
-  }
-
-  private translations(): void {
-    this.translate.get('COMMON.CONTACT').subscribe((res: string) => {
+  ngOnInit(): void {
+    this.translate.get('COMMON.ABOUT').subscribe((res: string) => {
       this.title = res;
     });
   }

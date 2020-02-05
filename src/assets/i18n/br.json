@@ -1,13 +1,13 @@
 {
   "COMMON" : {
-    "ABOUT": "sobre",
-    "SKILLS": "habilidades",
-    "PORTFOLIO": "portfólio",
-    "CONTACT": "contato"
+    "ABOUT": "Sobre",
+    "SKILLS": "Habilidades",
+    "PORTFOLIO": "Portfólio",
+    "CONTACT": "Contato"
   },
   "LANGUAGE" : {
     "BR" : "Português",
-    "ESP" : "Espanhol",
+    "SPA" : "Espanhol",
     "ENG" : "Inglês"
   },
   "ABOUT": {

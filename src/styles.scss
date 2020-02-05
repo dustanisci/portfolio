@@ -12,6 +12,23 @@ body{
   overflow-x: hidden;
 }
 
+.portfolio-title {
+  font-size: 30pt;
+  text-transform: lowercase;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 25pt;
+  }
+
+  &:before {
+    content: '';
+    width: 30px;
+    height: 5px;
+    position: absolute;
+    bottom: -10px;
+  }
+}
+
 @keyframes multiple-opacities-on {
   0%   {opacity: 0}
   25%  {opacity: 0.25}

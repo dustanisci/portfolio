@@ -27,20 +27,13 @@ export class ContainerPortfolioComponent implements OnInit {
   @ViewChild('list', { static: false })
   public list: ElementRef;
 
-  @Input()
-  public set actionLanguage(language: Languages) {
-    this.translations();
-  }
-
   constructor(
     private renderer: Renderer2,
     private ref: ChangeDetectorRef,
-    private portfolioService: ContainerPortfolioService,
-    private translate: TranslateService) { 
-      this.translations();
-    }
+    private portfolioService: ContainerPortfolioService) {
+  }
 
-  public ngOnInit():void {
+  public ngOnInit(): void {
     this.dataPortfolio();
   }
 
@@ -53,7 +46,7 @@ export class ContainerPortfolioComponent implements OnInit {
     }, () => this.loader);
   }
 
-  // This is temporary until the service is created
+  // This is temporary until the webservice is created
   public setItemsByIndex(index: number) {
     this.loaderPortfolio = true;
     setTimeout(() => {
@@ -75,14 +68,6 @@ export class ContainerPortfolioComponent implements OnInit {
   public actionModal(project: Portfolio) {
     this.openedProject = project;
     this.showModal = true;
-  }
-
-  private translations(): void {
-    this.translate.get(['COMMON.PORTFOLIO', 'PORTFOLIO.OF', 'PORTFOLIO.IMAGE']).subscribe((res: string) => {
-      this.title = res['COMMON.PORTFOLIO'];
-      this.textImage = res['PORTFOLIO.IMAGE'];
-      this.textOf = res['PORTFOLIO.OF'];
-    });
   }
 
 }

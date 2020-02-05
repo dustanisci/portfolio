@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContainerAboutComponent } from './container-about/container-about.component';
 import { ContainerContactComponent } from './container-contact/container-contact.component';
 import { ContainerPortfolioComponent } from './container-portfolio/container-portfolio.component';
-import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NavbarComponent } from '@shared/components/navbar/navbar.component';
 import { ContainerGeometricComponent } from './shared/components/container-geometric/container-geometric.component';
 import { ContainerSkillsComponent } from './container-skills/container-skills.component';
@@ -14,6 +13,7 @@ import { ModalComponent } from './shared/components/modal/modal.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
+import { FooterComponent } from '@shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [

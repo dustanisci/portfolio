@@ -34,7 +34,6 @@
             },
             "styles": [
               "./node_modules/aos/dist/aos.css",
-              "src/assets/style/portfolio.scss",
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/style/fonts.scss",
@@ -110,7 +109,6 @@
             },
             "styles": [
               "./node_modules/aos/dist/aos.css",
-              "src/assets/style/portfolio.scss",
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/style/fonts.scss",

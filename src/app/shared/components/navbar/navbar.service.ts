@@ -11,6 +11,6 @@ export class NavbarService {
   constructor(private apiService: ApiService) { }
 
   public dataNavbar(): Observable<object> {
-    return this.apiService.get(endpoint.navbar);   
+    return this.apiService.get(endpoint.navbar);
   }
 }

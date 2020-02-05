@@ -1,9 +1,8 @@
-import { Component, OnInit, ElementRef, ViewChild, HostListener, Output, EventEmitter, Renderer2, OnChanges } from '@angular/core';
-import { Navbar, Target } from '@shared/models/navbar';
-import { NavbarService } from './navbar.service';
+import { Component, OnInit, HostListener, Output, EventEmitter, Input } from '@angular/core';
+import { Navbar } from '@shared/models/navbar';
 import { Dropdown } from '@shared/models/dropdown';
-import { Languages } from '@shared/models/languages.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { Languages } from '@shared/models/languages.enum';
 
 @Component({
   selector: 'app-navbar',
@@ -16,61 +15,43 @@ export class NavbarComponent implements OnInit {
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
   @Output()
-  public language: EventEmitter<Languages> = new EventEmitter<Languages>();
-
-  @Output()
   public openedMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public navbar: Navbar[] = [{
-    "name": "About",
-    "link": "#about",
-  },
-  {
-    "name": "Skills",
-    "link": "#skills",
-  },
-  {
-    "name": "Portfolio",
-    "link": "#portfolio",
-  },
-  {
-    "name": "Contact",
-    "link": "#contact",
-  }];
+  @Input()
+  public translate: TranslateService;
 
+  public navbar: Navbar[] = [];
   public openMenu = false;
-  public languages: Dropdown[] = [
-    {
-      label: 'Portuguese',
-      value: 0,
-      selected: true
-    },
-    {
-      label: 'English',
-      value: 1,
-      selected: false
-    },
-    {
-      label: 'Spanish',
-      value: 2,
-      selected: false
-    }
-  ];
+  public languages: Dropdown[] = [];
 
-  constructor(
-    private navbarService: NavbarService,
-    private translate: TranslateService) { }
+  constructor() {
+  }
 
   ngOnInit() {
     // this.dataNavbar();
     this.loader.emit();
-  }
-  
-  private dataNavbar(): void {
-    this.navbarService.dataNavbar().subscribe((navbar: Navbar[]) => {
-      this.navbar = navbar;
-      this.loader.emit();
-    }, () => this.loader.emit());
+    this.setTranslateNavbar();
+
+    // This is temporary until the webservice is created
+    this.translate.get(['LANGUAGE.SPA', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
+      this.languages = [
+        {
+          label: res['LANGUAGE.BR'],
+          value: 0,
+          selected: true
+        },
+        {
+          label: res['LANGUAGE.ENG'],
+          value: 1,
+          selected: false
+        },
+        {
+          label: res['LANGUAGE.SPA'],
+          value: 2,
+          selected: false
+        }
+      ];
+    });
   }
 
   private lockScrollBody(): void {
@@ -90,13 +71,42 @@ export class NavbarComponent implements OnInit {
 
   public setLanguage(value: number) {
     if (value === Languages.English) {
-      this.translate.setDefaultLang('en');
+      this.translate.use('en');
     } else if (value === Languages.Portuguese) {
-      this.translate.setDefaultLang('br');
+      this.translate.use('br');
     } else {
-      this.translate.setDefaultLang('esp');
+      this.translate.use('esp');
     }
-    this.language.emit(value);
+
+    this.setTranslateNavbar();
+
+    this.translate.get(['LANGUAGE.SPA', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
+      this.languages[0].label = res['LANGUAGE.BR'];
+      this.languages[1].label = res['LANGUAGE.ENG'];
+      this.languages[2].label = res['LANGUAGE.SPA'];
+    });
+  }
+
+  // This is temporary until the webservice is created
+  private setTranslateNavbar(): void {
+    this.translate.get(['COMMON.ABOUT', 'COMMON.PORTFOLIO', 'COMMON.CONTACT', 'COMMON.SKILLS']).subscribe((res: string) => {
+      this.navbar = [{
+        name: res['COMMON.ABOUT'],
+        link: '#about',
+      },
+      {
+        name: res['COMMON.SKILLS'],
+        link: '#skills',
+      },
+      {
+        name: res['COMMON.PORTFOLIO'],
+        link: '#portfolio',
+      },
+      {
+        name: res['COMMON.CONTACT'],
+        link: '#contact',
+      }];
+    });
   }
 
   @HostListener('window:resize', ['$event'])

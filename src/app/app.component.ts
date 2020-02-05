@@ -1,8 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Loader } from '@shared/models/loader';
 import * as AOS from 'aos';
 import { TranslateService } from '@ngx-translate/core';
-import { Languages } from '@shared/models/languages.enum';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +13,8 @@ export class AppComponent implements OnInit {
 
   public multiloader: Loader = {} as Loader;
   public openedMenu = false;
-  public language: Languages;
 
-  constructor(translate: TranslateService) {
+  constructor(public translate: TranslateService) {
     translate.setDefaultLang('br');
   }
 

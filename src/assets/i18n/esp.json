@@ -1,9 +1,9 @@
 {
   "COMMON" : {
-    "ABOUT": "sobre",
-    "SKILLS": "habilidades",
-    "PORTFOLIO": "cartera",
-    "CONTACT": "contacto"
+    "ABOUT": "Sobre",
+    "SKILLS": "Habilidades",
+    "PORTFOLIO": "Cartera",
+    "CONTACT": "Contacto"
   },
   "LANGUAGE" : {
     "BR" : "Portugues",

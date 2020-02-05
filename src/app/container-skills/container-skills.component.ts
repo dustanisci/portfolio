@@ -11,64 +11,64 @@ import { Languages } from '@shared/models/languages.enum';
 export class ContainerSkillsComponent implements OnInit {
 
   public skills: Skills[] = [{
-    "technology": "Front-End",
-    "value": [
-      "HTML 5",
-      "CSS 3",
-      "SCSS",
-      "SASS",
-      "COMPASS",
-      "Angular 9",
-      "Javascript",
-      "Typescript",
-      "jQuery / Ajax",
-      "Bootstrap",
-      "Material",
-      "Materialize",
-      "Foundation",
-      "SEO"
+    technology: 'Front-End',
+    value: [
+      'HTML 5',
+      'CSS 3',
+      'SCSS',
+      'SASS',
+      'COMPASS',
+      'Angular 9',
+      'Javascript',
+      'Typescript',
+      'jQuery / Ajax',
+      'Bootstrap',
+      'Material',
+      'Materialize',
+      'Foundation',
+      'SEO'
     ]
   },
   {
-    "technology": "Back-End",
-    "value": [
-      "Java",
-      "JPA",
-      "JWT (Tokens)",
-      "OAuth 2.0",
-      "Spring Boot",
-      "Spring MVC",
-      "Spring Security",
-      "Hibernate",
-      "Rest",
-      "Socket",
-      "Webservices"
+    technology: 'Back-End',
+    value: [
+      'Java',
+      'JPA',
+      'JWT (Tokens)',
+      'OAuth 2.0',
+      'Spring Boot',
+      'Spring MVC',
+      'Spring Security',
+      'Hibernate',
+      'Rest',
+      'Socket',
+      'Webservices'
     ]
   },
   {
-    "technology": "Others",
-    "value": [
-      "Versionamento de código - GIT",
-      "Docker",
-      "Google Analytics"
+    technology: 'Others',
+    value: [
+      'Versionamento de código - GIT',
+      'Docker',
+      'Google Analytics'
     ]
   },
   {
-    "technology": "Database",
-    "value": [
-      "MongoDB",
-      "SQL Server",
-      "MySQL Server"
+    technology: 'Database',
+    value: [
+      'MongoDB',
+      'SQL Server',
+      'MySQL Server'
     ]
   },
   {
-    "technology": "Test",
-    "value": [
-      "Jersey",
-      "Jasmine",
-      "Karma",
-      "Phantom",
-      "JUnit"
+    technology: 'Test',
+    value: [
+      'Jersey',
+      'Jasmine',
+      'Karma',
+      'Phantom',
+      'JUnit'
     ]
   }];
 
@@ -84,7 +84,7 @@ export class ContainerSkillsComponent implements OnInit {
 
   ngOnInit() {
     // this.dataTechnologies();
-    this.loader.emit()
+    this.loader.emit();
   }
 
   private dataTechnologies(): void {

@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Languages } from '@shared/models/languages.enum';
+import { Component, Input, AfterContentInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,20 +6,20 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {
+export class FooterComponent implements AfterContentInit {
 
   public year = new Date().getFullYear();
   public copyright: string;
 
   @Input()
-  public set actionLanguage(language: Languages) {
-    this.translations();
+  public translate: TranslateService;
+
+  constructor() {
   }
 
-  constructor(
-    private translate: TranslateService) { 
-      this.translations();
-    }
+  ngAfterContentInit(): void {
+    this.translations();
+  }
 
   private translations(): void {
     this.translate.get('FOOTER.COPYRIGHT').subscribe((res: string) => {
