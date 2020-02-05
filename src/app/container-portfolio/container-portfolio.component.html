@@ -1,7 +1,7 @@
 <div id="portfolio" class="container mt-4">
   <div class="container-title col-12 mt-md-5 mb-md-5 mb-4 pt-3 pb-3">
     <h2 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="400" class="portfolio-title position-relative">
-      portfolio</h2>
+      {{ title }} </h2>
   </div>
 
   <div class="container-projects col-12">
@@ -11,7 +11,7 @@
         <div class="col-lg-5 col-12 mb-lg-5 pb-lg-5" *ngFor="let project of portfolioTwoItems"
           (click)="actionModal(project)">
           <img data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="400" *ngIf="project" class="pb-3 img-fluid" src="{{ project.galerias[0].url_galeria }}" />
-          <label *ngIf="project" class="pt-2 d-block font-weight-bolder text-center">Imagem 1 de
+          <label *ngIf="project" class="pt-2 d-block font-weight-bolder text-center">{{ textImage }} 1 {{ textOf }}
             {{ project.galerias.length }}</label>
         </div>
       </ng-container>

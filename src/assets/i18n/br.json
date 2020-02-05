@@ -1,9 +1,14 @@
 {
   "COMMON" : {
-    "ABOUT": "Sobre",
-    "SKILLS": "Habilidades",
-    "PORTFOLIO": "Portfólio",
-    "CONTACT": "Contato"
+    "ABOUT": "sobre",
+    "SKILLS": "habilidades",
+    "PORTFOLIO": "portfólio",
+    "CONTACT": "contato"
+  },
+  "LANGUAGE" : {
+    "BR" : "Português",
+    "ESP" : "Espanhol",
+    "ENG" : "Inglês"
   },
   "ABOUT": {
     "QUOTE" : "Para se ter sucesso, é necessário amar de verdade o que se faz. Caso contrário, levando em conta apenas o lado racional, você simplesmente desiste. É o que acontece com a maioria das pessoas.",
@@ -19,8 +24,8 @@
     "GIT" : "Versionamento de código - GIT"
   },
   "PORTFOLIO" : {
-    "IMAGE" : "IMAGEM",
-    "OF" : "DE" 
+    "IMAGE" : "Imagem",
+    "OF" : "de" 
   },
   "FOOTER" : {
     "COPYRIGHT" : "Todos os direitos reservados."

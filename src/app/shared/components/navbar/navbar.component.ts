@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, HostListener, Output, EventEmitter, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, HostListener, Output, EventEmitter, Renderer2, OnChanges } from '@angular/core';
 import { Navbar, Target } from '@shared/models/navbar';
 import { NavbarService } from './navbar.service';
 import { Dropdown } from '@shared/models/dropdown';
@@ -16,9 +16,28 @@ export class NavbarComponent implements OnInit {
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
   @Output()
+  public language: EventEmitter<Languages> = new EventEmitter<Languages>();
+
+  @Output()
   public openedMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public navbar: Navbar[] = [];
+  public navbar: Navbar[] = [{
+    "name": "About",
+    "link": "#about",
+  },
+  {
+    "name": "Skills",
+    "link": "#skills",
+  },
+  {
+    "name": "Portfolio",
+    "link": "#portfolio",
+  },
+  {
+    "name": "Contact",
+    "link": "#contact",
+  }];
+
   public openMenu = false;
   public languages: Dropdown[] = [
     {
@@ -43,9 +62,10 @@ export class NavbarComponent implements OnInit {
     private translate: TranslateService) { }
 
   ngOnInit() {
-    this.dataNavbar();
+    // this.dataNavbar();
+    this.loader.emit();
   }
-
+  
   private dataNavbar(): void {
     this.navbarService.dataNavbar().subscribe((navbar: Navbar[]) => {
       this.navbar = navbar;
@@ -69,7 +89,6 @@ export class NavbarComponent implements OnInit {
   }
 
   public setLanguage(value: number) {
-    console.log('rodou')
     if (value === Languages.English) {
       this.translate.setDefaultLang('en');
     } else if (value === Languages.Portuguese) {
@@ -77,7 +96,7 @@ export class NavbarComponent implements OnInit {
     } else {
       this.translate.setDefaultLang('esp');
     }
-    console.log(this.translate);
+    this.language.emit(value);
   }
 
   @HostListener('window:resize', ['$event'])

@@ -8,7 +8,7 @@
         </a>
       </div>
 
-      <app-dropdown class="position-absolute " [items]="languages" (action)="setLanguage($event)"></app-dropdown>
+      <app-dropdown class="position-absolute " [items]="languages" (value)="setLanguage($event)"></app-dropdown>
 
       <div [ngClass]="{'openMenu': openMenu}"
         class="container-items col-12 col-sm-12 col-md-8 d-md-flex align-md-items-center justify-content-md-end">

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { About } from '@shared/models/about';
 import { ContainerAboutService } from './container-about.service';
+import { Languages } from '@shared/models/languages.enum';
 
 @Component({
   selector: 'app-container-about',
@@ -27,6 +28,11 @@ export class ContainerAboutComponent implements OnInit {
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
+  @Input()
+  public set actionLanguage(language: Languages) {
+
+  }
+
   constructor(private aboutService: ContainerAboutService) { }
 
   ngOnInit() {
@@ -34,11 +40,11 @@ export class ContainerAboutComponent implements OnInit {
     this.loader.emit();
   }
 
-  // private dataAbout(): void {
-  //   this.aboutService.dataAbout().subscribe((about: About[]) => {
-  //     this.about = about;
-  //     this.loader.emit();
-  //   }, () => this.loader.emit());
-  // }
+  private dataAbout(): void {
+    this.aboutService.dataAbout().subscribe((about: About[]) => {
+      this.about = about;
+      this.loader.emit();
+    }, () => this.loader.emit());
+  }
 
 }

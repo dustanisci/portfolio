@@ -1,9 +1,14 @@
 {
   "COMMON" : {
-    "ABOUT": "About",
-    "SKILLS": "Skills",
-    "PORTFOLIO": "Portfolio",
-    "CONTACT": "Contact"
+    "ABOUT": "about",
+    "SKILLS": "skills",
+    "PORTFOLIO": "portfolio",
+    "CONTACT": "contact"
+  },
+  "LANGUAGE" : {
+    "BR" : "Portuguese",
+    "ESP" : "Spanish",
+    "ENG" : "English"
   },
   "ABOUT": {
     "QUOTE" : "To be successful, it is necessary to truly love what you do. Otherwise, considering only the rational side, you'll  simply give up. This is what happens to most people.",

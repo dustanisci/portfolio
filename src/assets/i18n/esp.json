@@ -1,9 +1,14 @@
 {
   "COMMON" : {
-    "ABOUT": "Sobre",
-    "SKILLS": "Habilidades",
-    "PORTFOLIO": "Cartera",
-    "CONTACT": "Contacto"
+    "ABOUT": "sobre",
+    "SKILLS": "habilidades",
+    "PORTFOLIO": "cartera",
+    "CONTACT": "contacto"
+  },
+  "LANGUAGE" : {
+    "BR" : "Portugues",
+    "ESP" : "Español",
+    "ENG" : "Ingles"
   },
   "ABOUT": {
     "QUOTE" : "Para tener éxito, es necesario amar verdaderamente lo que haces. De lo contrario, teniendo en cuenta solo el lado racional, simplemente te rindes. Esto es lo que le sucede a la mayoría de las personas.",

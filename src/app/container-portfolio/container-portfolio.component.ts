@@ -1,6 +1,8 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2, ChangeDetectorRef, Input } from '@angular/core';
 import { ContainerPortfolioService } from './container-portfolio.service';
 import { Portfolio } from '@shared/models/portfolio';
+import { Languages } from '@shared/models/languages.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-portfolio',
@@ -15,6 +17,9 @@ export class ContainerPortfolioComponent implements OnInit {
   public loaderPortfolio = false;
   public showModal = false;
   public openedProject: Portfolio = {} as Portfolio;
+  public title: string;
+  public textOf: string;
+  public textImage: string;
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
@@ -22,12 +27,20 @@ export class ContainerPortfolioComponent implements OnInit {
   @ViewChild('list', { static: false })
   public list: ElementRef;
 
+  @Input()
+  public set actionLanguage(language: Languages) {
+    this.translations();
+  }
+
   constructor(
     private renderer: Renderer2,
     private ref: ChangeDetectorRef,
-    private portfolioService: ContainerPortfolioService) { }
+    private portfolioService: ContainerPortfolioService,
+    private translate: TranslateService) { 
+      this.translations();
+    }
 
-  ngOnInit() {
+  public ngOnInit():void {
     this.dataPortfolio();
   }
 
@@ -62,6 +75,14 @@ export class ContainerPortfolioComponent implements OnInit {
   public actionModal(project: Portfolio) {
     this.openedProject = project;
     this.showModal = true;
+  }
+
+  private translations(): void {
+    this.translate.get(['COMMON.PORTFOLIO', 'PORTFOLIO.OF', 'PORTFOLIO.IMAGE']).subscribe((res: string) => {
+      this.title = res['COMMON.PORTFOLIO'];
+      this.textImage = res['PORTFOLIO.IMAGE'];
+      this.textOf = res['PORTFOLIO.OF'];
+    });
   }
 
 }

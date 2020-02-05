@@ -1,11 +1,14 @@
 <div
   [ngStyle]="{'display': multiloader.navbar === false && multiloader.about === false && multiloader.portfolio === false && multiloader.skills === false ? 'block' : 'none'}">
-  <app-navbar (loader)="multiloader.navbar = false" (openedMenu)="openedMenu = $event"></app-navbar>
-  <app-container-about class="mt-100" (loader)="multiloader.about = false"></app-container-about>
-  <app-container-skills (loader)="multiloader.skills = false"></app-container-skills>
-  <app-container-portfolio (loader)="multiloader.portfolio = false"></app-container-portfolio>
-  <app-container-contact></app-container-contact>
-  <app-footer></app-footer>
+  <app-navbar (loader)="multiloader.navbar = false" (language)="language = $event" (openedMenu)="openedMenu = $event">
+  </app-navbar>
+  <app-container-about class="mt-100" [actionLanguage]="language" (loader)="multiloader.about = false">
+  </app-container-about>
+  <app-container-skills [actionLanguage]="language" (loader)="multiloader.skills = false"></app-container-skills>
+  <app-container-portfolio [actionLanguage]="language" (loader)="multiloader.portfolio = false">
+  </app-container-portfolio>
+  <app-container-contact [actionLanguage]="language"></app-container-contact>
+  <app-footer [actionLanguage]="language"></app-footer>
 </div>
 
 <div
