@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { About } from '@shared/models/about';
 import { ContainerAboutService } from './container-about.service';
-import { Languages } from '@shared/models/languages.enum';
 
 @Component({
   selector: 'app-container-about',

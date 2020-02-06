@@ -21,7 +21,7 @@ export class DropdownComponent implements OnChanges {
   constructor(private ref: ElementRef) { }
 
   ngOnChanges(): void {
-    this.label = this.items.length ? this.items.find(item => item.selected === true).label : '';
+    this.label = this.items ? this.items.find(item => item.selected === true).label : '';
   }
 
   public action(item: Dropdown) {

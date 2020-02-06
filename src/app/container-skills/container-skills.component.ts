@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { ContainerSkillsService } from './container-skills.service';
 import { Skills } from '@shared/models/skills';
-import { Languages } from '@shared/models/languages.enum';
 
 @Component({
   selector: 'app-container-skills',
@@ -74,11 +73,6 @@ export class ContainerSkillsComponent implements OnInit {
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();S
-
-  @Input()
-  public set actionLanguage(language: Languages) {
-
-  }
 
   constructor(private skillService: ContainerSkillsService) { }
 

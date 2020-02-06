@@ -1,8 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { ContainerPortfolioService } from './container-portfolio.service';
 import { Portfolio } from '@shared/models/portfolio';
-import { Languages } from '@shared/models/languages.enum';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-portfolio',

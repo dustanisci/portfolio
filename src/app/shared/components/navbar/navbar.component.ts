@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, Output, EventEmitter, Input } from '@a
 import { Navbar } from '@shared/models/navbar';
 import { Dropdown } from '@shared/models/dropdown';
 import { TranslateService } from '@ngx-translate/core';
-import { Languages } from '@shared/models/languages.enum';
+import { Language } from '@shared/models/Language.enum';
 
 @Component({
   selector: 'app-navbar',
@@ -17,24 +17,23 @@ export class NavbarComponent implements OnInit {
   @Output()
   public openedMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  @Input()
-  public translate: TranslateService;
+  @Output()
+  public languageId: EventEmitter<number> = new EventEmitter<number>();
 
   public navbar: Navbar[] = [];
   public openMenu = false;
-  public languages: Dropdown[] = [];
+  public language: Dropdown[] = [];
 
-  constructor() {
+  constructor(private translate: TranslateService) {
   }
 
   ngOnInit() {
     // this.dataNavbar();
     this.loader.emit();
-    this.setTranslateNavbar();
 
     // This is temporary until the webservice is created
-    this.translate.get(['LANGUAGE.SPA', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
-      this.languages = [
+    this.translate.get(['LANGUAGE.ESP', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
+      this.language = [
         {
           label: res['LANGUAGE.BR'],
           value: 0,
@@ -46,11 +45,14 @@ export class NavbarComponent implements OnInit {
           selected: false
         },
         {
-          label: res['LANGUAGE.SPA'],
+          label: res['LANGUAGE.ESP'],
           value: 2,
           selected: false
         }
       ];
+
+      this.setListLanguage(this.language.find(language => language.selected === true).value);
+      this.setTranslateNavbar();
     });
   }
 
@@ -64,26 +66,34 @@ export class NavbarComponent implements OnInit {
     this.lockScrollBody();
   }
 
+  public changeLanguage(id: Language) {
+    this.setListLanguage(id);
+    this.setTranslateNavbar();
+    this.setTranslateLanguage();
+    this.languageId.emit(id);
+  }
+
   public setPositionScroll(id: string) {
     const axisY = document.getElementById(id.replace('#', '')).getBoundingClientRect();
     window.scrollBy(0, axisY.top - 100);
   }
 
-  public setLanguage(value: number) {
-    if (value === Languages.English) {
+  public setListLanguage(id: Language) {
+    if (id === Language.English) {
       this.translate.use('en');
-    } else if (value === Languages.Portuguese) {
+    } else if (id === Language.Portuguese) {
       this.translate.use('br');
     } else {
       this.translate.use('esp');
     }
+  }
 
-    this.setTranslateNavbar();
-
+  // This is temporary until the webservice is created
+  public setTranslateLanguage(): void {
     this.translate.get(['LANGUAGE.SPA', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
-      this.languages[0].label = res['LANGUAGE.BR'];
-      this.languages[1].label = res['LANGUAGE.ENG'];
-      this.languages[2].label = res['LANGUAGE.SPA'];
+      this.language[0].label = res['LANGUAGE.BR'];
+      this.language[1].label = res['LANGUAGE.ENG'];
+      this.language[2].label = res['LANGUAGE.SPA'];
     });
   }
 
