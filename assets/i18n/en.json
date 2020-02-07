@@ -1,0 +1,34 @@
+{
+  "COMMON" : {
+    "ABOUT": "About",
+    "SKILLS": "Skills",
+    "PORTFOLIO": "Portfolio",
+    "CONTACT": "Contact"
+  },
+  "LANGUAGE" : {
+    "BR" : "Portuguese",
+    "SPA" : "Spanish",
+    "ENG" : "English"
+  },
+  "ABOUT": {
+    "QUOTE" : "\"To be successful, it is necessary to truly love what you do. Otherwise, considering only the rational side, you'll  simply give up. This is what happens to most people.\"",
+    "SQUARE1" : "Developer with more than 5 years of experience, graduated from Senac SP and with knowledge of current market technologies.",
+    "SQUARE2" : "Expert in the Angular framework, which has developed many websites and internal systems.",
+    "SQUARE3" : "He is currently studying English and related technology courses. His next goal is to do a graduate degree in \"Big Data\" or \"Artificial Intelligence.\"",
+    "SQUARE4" : "Some of his hobbies are drawing, traveling and logical thinking games :P" 
+  },
+  "SKILLS" : {
+    "OTHERS" : "Others",
+    "DATABASE" : "Database",
+    "TEST" : "Test",
+    "GIT" : "Version Control - GIT"
+  },
+  "FOOTER" : {
+    "COPYRIGHT" : "All rights reserved."
+  },
+  "MODAL" : {
+    "BETTER_VIEW" : "To get a better view, turn the phone over.",
+    "IMAGE" : "Image",
+    "OF" : "of" 
+  }
+}
