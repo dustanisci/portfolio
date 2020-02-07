@@ -1,5 +1,5 @@
 <app-navbar (openedMenu)="openedMenu = $event" (changedLanguage)="changedLanguage = $event"></app-navbar>
-<app-container-about class="mt-100" [actionTranslate]="changedLanguage"></app-container-about>
+<app-container-about [actionTranslate]="changedLanguage"></app-container-about>
 <app-container-skills [actionTranslate]="changedLanguage"></app-container-skills>
 <app-container-portfolio></app-container-portfolio>
 <app-container-contact></app-container-contact>
