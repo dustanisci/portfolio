@@ -7,7 +7,6 @@ nav {
   .container-logo {
     img {
       width: 150px;
-      animation: 600ms multiple-opacities-on;
 
       @media only screen and (max-width: 767px) {
         width: 130px;
@@ -47,7 +46,6 @@ nav {
 
       li {
         a {
-          animation: 700ms multiple-opacities-on;
           color: palette-color('primary', '2');
           transition: 200ms linear;
           cursor: pointer;

@@ -27,13 +27,18 @@
     box-shadow   : 2px 2px 5px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.14);
     display      : none;
+    opacity: 0;
+    transition: 200ms all opacity;
+
+    &.effect-opacity {
+      opacity: 1;
+      transition: 200ms all opacity;
+    }
 
     &.active {
       z-index   : 100;
-      opacity   : 1;
-      transition: 500ms opacity linear;
       display: block;
-
+  
       li {
         transition: 400ms linear;
 

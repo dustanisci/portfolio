@@ -16,6 +16,7 @@ export class DropdownComponent implements OnChanges {
 
   public label: string;
   public isActive = false;
+  public effectOpacity = false;
 
   constructor(private ref: ElementRef) { }
 
@@ -23,9 +24,15 @@ export class DropdownComponent implements OnChanges {
     this.label = this.items.length ? this.items.find(item => item.selected === true).label : '';
   }
 
+  public open(isActive: boolean, effectOpacity: boolean): void {
+    this.isActive = isActive
+    setTimeout(() => this.effectOpacity = effectOpacity, 250);
+  }
+
   public action(item: Dropdown) {
     this.value.emit(item.value);
     this.label = item.label;
+    this.effectOpacity = false;
     this.isActive = false;
   }
 
@@ -33,6 +40,7 @@ export class DropdownComponent implements OnChanges {
   @HostListener('window:scroll', ['$event'])
   public onClick(event) {
     if (!this.ref.nativeElement.contains(event.target)) {
+      this.effectOpacity = false
       this.isActive = false;
     }
   }

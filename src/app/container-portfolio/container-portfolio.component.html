@@ -1,6 +1,6 @@
 <div id="portfolio" class="container mt-4">
   <div class="container-title col-12 mt-md-5 mb-md-5 mb-4 pt-3 pb-3">
-    <h2 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="400" class="portfolio-title position-relative">
+    <h2 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" class="portfolio-title position-relative">
       {{ 'COMMON.PORTFOLIO' | translate }} </h2>
   </div>
 
@@ -10,7 +10,7 @@
       <ng-container *ngIf="!loaderPortfolio">
         <div class="col-lg-5 col-12 mb-lg-5 pb-lg-5" *ngFor="let project of portfolioTwoItems"
           (click)="actionModal(project)">
-          <img data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="400" *ngIf="project" class="pb-3 img-fluid" src="{{ project.galerias[0].url_galeria }}" />
+          <img data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="750" *ngIf="project" class="pb-3 img-fluid" src="{{ project.galerias[0].url_galeria }}" />
           <label *ngIf="project" class="pt-2 d-block font-weight-bolder text-center">{{ 'MODAL.IMAGE' | translate }} 1 {{ 'MODAL.OF' | translate }}
             {{ project.galerias.length }}</label>
         </div>

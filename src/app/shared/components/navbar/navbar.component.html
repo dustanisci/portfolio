@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row position-relative d-md-flex align-items-stretch">
 
-      <div class="container-logo col-4">
+      <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-duration="1000" class="container-logo col-4">
         <a href="./">
           <img src="./assets/img/logo.png" />
         </a>
@@ -11,7 +11,7 @@
       <app-dropdown class="position-absolute " [items]="language" (value)="translateAction($event)"></app-dropdown>
 
       <div [ngClass]="{'openMenu': openMenu}" class="container-items col-12 col-sm-12 col-md-8 d-md-flex align-md-items-center justify-content-md-end">
-        <ul class="d-md-flex w-100 pl-0 align-items-center justify-content-end mb-0 mt-2 mt-md-0">
+        <ul data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-duration="1000" class="d-md-flex w-100 pl-0 align-items-center justify-content-end mb-0 mt-2 mt-md-0">
           <li class="d-md-inline d-sm-block d-block ml-md-3 text-center text-md-left" *ngFor="let item of navbar">
             <a class="pt-4 pb-4 pl-md-3 pt-md-0 pb-md-0 text-decoration-none"
               (click)="navbarAction(false); setPositionScroll(item.link);">{{ item.name }}</a>
