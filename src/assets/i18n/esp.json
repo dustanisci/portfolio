@@ -7,11 +7,11 @@
   },
   "LANGUAGE" : {
     "BR" : "Portugues",
-    "ESP" : "Español",
+    "SPA" : "Español",
     "ENG" : "Ingles"
   },
   "ABOUT": {
-    "QUOTE" : "Para tener éxito, es necesario amar verdaderamente lo que haces. De lo contrario, teniendo en cuenta solo el lado racional, simplemente te rindes. Esto es lo que le sucede a la mayoría de las personas.",
+    "QUOTE" : "\"Para tener éxito, es necesario amar verdaderamente lo que haces. De lo contrario, teniendo en cuenta solo el lado racional, simplemente te rindes. Esto es lo que le sucede a la mayoría de las personas.\"",
     "SQUARE1" : "Desarrollador con más de 5 años de experiencia, graduado de Senac SP y con conocimiento de las tecnologías actuales del mercado.",
     "SQUARE2" : "Experto en tecnología angular, que ya ha desarrollado muchos sitios web y sistemas internos.",
     "SQUARE3" : "Actualmente está estudiando inglés y cursos relacionados en el campo. Su próximo objetivo es hacer un posgrado en \"Big Data\" o \"Inteligencia Artificial\"",
@@ -23,11 +23,12 @@
     "TEST" : "Prueba",
     "GIT" : "Versiones de código - GIT"
   },
-  "PORTFOLIO" : {
-    "IMAGE" : "Foto",
-    "OF" : "de" 
-  },
   "FOOTER" : {
     "COPYRIGHT" : "Todos los derechos reservados."
+  },
+  "MODAL" : {
+    "BETTER_VIEW" : "Para tener una mejor vista, gire el teléfono.",
+    "IMAGE" : "Foto",
+    "OF" : "de" 
   }
 }

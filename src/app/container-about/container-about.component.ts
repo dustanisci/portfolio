@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { About } from '@shared/models/about';
 import { ContainerAboutService } from './container-about.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-about',
@@ -9,29 +10,25 @@ import { ContainerAboutService } from './container-about.service';
 })
 export class ContainerAboutComponent implements OnInit {
 
-  public about: About[] = [
-    {
-      description: 'Desenvolvedor com mais de 5 anos de experiência, graduado pelo Senac SP e com conhecimentos nas tecnologias atuais do mercado.'
-    },
-    {
-      description: 'Expert no framework Angular, o qual já desenvolveu muitos sites e sistemas internos.'
-    },
-    {
-      description: 'No momento se dedica no inglês e em cursos relacionados da área. Seu próximo objetivo é fazer uma pós-graduação em Big Data ou Inteligência Artificial.'
-    },
-    {
-      description: 'Alguns de seus hobbies são desenhar, viajar e jogos de raciocínio lógico :P'
-    }
-  ];
+  public about: About[] = [];
 
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private aboutService: ContainerAboutService) { }
+  @Input()
+  public set actionTranslate(changedLanguage: number) {
+    this.setAbout();
+  }
+
+  constructor(
+    private aboutService: ContainerAboutService,
+    private translate: TranslateService) {
+  }
 
   ngOnInit() {
     // this.dataAbout();
     this.loader.emit();
+    this.setAbout();
   }
 
   private dataAbout(): void {
@@ -39,6 +36,17 @@ export class ContainerAboutComponent implements OnInit {
       this.about = about;
       this.loader.emit();
     }, () => this.loader.emit());
+  }
+
+  private setAbout(): void {
+    this.translate.get(['ABOUT.SQUARE1', 'ABOUT.SQUARE2', 'ABOUT.SQUARE3', 'ABOUT.SQUARE4']).subscribe((res: string) => {
+      this.about = [
+        { description: res['ABOUT.SQUARE1'] },
+        { description: res['ABOUT.SQUARE2'] },
+        { description: res['ABOUT.SQUARE3'] },
+        { description: res['ABOUT.SQUARE4'] }
+      ];
+    });
   }
 
 }

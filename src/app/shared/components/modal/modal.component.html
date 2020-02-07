@@ -7,7 +7,7 @@
       </div>
 
       <div class="container-warning col-12 position-absolute text-center mt-5 pt-5">
-        <label>Para ter uma melhor visualização, vire o celular.</label>
+        <label>{{ 'MODAL.BETTER_VIEW' | translate }}</label>
       </div>
 
       <div class="container-elements col-12 d-flex">
@@ -29,7 +29,7 @@
       <div class="container-quantity col-12 d-flex align-items-center justify-content-center">
         <div class="row">
           <div *ngIf="project && project.galerias" class="mb-3">
-            Imagem {{ index + 1 }} de {{ project.galerias.length }}
+            {{ 'MODAL.IMAGE' | translate }} {{ index + 1 }} {{ 'MODAL.OF' | translate }} {{ project.galerias.length }}
           </div>
         </div>
       </div>

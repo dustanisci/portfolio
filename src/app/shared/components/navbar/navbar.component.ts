@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   public openedMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Output()
-  public languageId: EventEmitter<number> = new EventEmitter<number>();
+  public changedLanguage: EventEmitter<number> = new EventEmitter<number>();
 
   public navbar: Navbar[] = [];
   public openMenu = false;
@@ -30,30 +30,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     // this.dataNavbar();
     this.loader.emit();
-
-    // This is temporary until the webservice is created
-    this.translate.get(['LANGUAGE.ESP', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
-      this.language = [
-        {
-          label: res['LANGUAGE.BR'],
-          value: 0,
-          selected: true
-        },
-        {
-          label: res['LANGUAGE.ENG'],
-          value: 1,
-          selected: false
-        },
-        {
-          label: res['LANGUAGE.ESP'],
-          value: 2,
-          selected: false
-        }
-      ];
-
-      this.setListLanguage(this.language.find(language => language.selected === true).value);
-      this.setTranslateNavbar();
-    });
+    this.translate.setDefaultLang('en');
+    this.translateAction(Language.English);
   }
 
   private lockScrollBody(): void {
@@ -66,11 +44,11 @@ export class NavbarComponent implements OnInit {
     this.lockScrollBody();
   }
 
-  public changeLanguage(id: Language) {
-    this.setListLanguage(id);
+  public translateAction(id: Language): void {
+    this.setLanguage(id);
+    this.setTranslateLanguage(id);
     this.setTranslateNavbar();
-    this.setTranslateLanguage();
-    this.languageId.emit(id);
+    this.changedLanguage.emit(id);
   }
 
   public setPositionScroll(id: string) {
@@ -78,7 +56,7 @@ export class NavbarComponent implements OnInit {
     window.scrollBy(0, axisY.top - 100);
   }
 
-  public setListLanguage(id: Language) {
+  public setLanguage(id: Language) {
     if (id === Language.English) {
       this.translate.use('en');
     } else if (id === Language.Portuguese) {
@@ -88,18 +66,29 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  // This is temporary until the webservice is created
-  public setTranslateLanguage(): void {
-    this.translate.get(['LANGUAGE.SPA', 'LANGUAGE.BR', 'LANGUAGE.ENG']).subscribe((res: string) => {
-      this.language[0].label = res['LANGUAGE.BR'];
-      this.language[1].label = res['LANGUAGE.ENG'];
-      this.language[2].label = res['LANGUAGE.SPA'];
+  private setTranslateLanguage(id: Language): void {
+    this.translate.get(['LANGUAGE.ENG', 'LANGUAGE.BR', 'LANGUAGE.SPA']).subscribe((res: string) => {
+      this.language = [{
+        label: res['LANGUAGE.ENG'],
+        value: 0,
+        selected: false
+      },
+      {
+        label: res['LANGUAGE.BR'],
+        value: 1,
+        selected: false
+      },
+      {
+        label: res['LANGUAGE.SPA'],
+        value: 2,
+        selected: false
+      }];
+      this.language.find(language => language.value === id).selected = true;
     });
   }
 
-  // This is temporary until the webservice is created
   private setTranslateNavbar(): void {
-    this.translate.get(['COMMON.ABOUT', 'COMMON.PORTFOLIO', 'COMMON.CONTACT', 'COMMON.SKILLS']).subscribe((res: string) => {
+    this.translate.get(['COMMON.ABOUT', 'COMMON.SKILLS', 'COMMON.PORTFOLIO', 'COMMON.CONTACT']).subscribe((res: string) => {
       this.navbar = [{
         name: res['COMMON.ABOUT'],
         link: '#about',

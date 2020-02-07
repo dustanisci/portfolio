@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Portfolio } from '@shared/models/portfolio';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-modal',
@@ -29,7 +30,9 @@ export class ModalComponent {
 
   public index = 0;
 
-  constructor(private renderer: Renderer2) {
+  constructor(
+    private renderer: Renderer2,
+    private translate: TranslateService) {
   }
 
   private _actionModal(showModal: boolean) {

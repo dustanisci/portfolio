@@ -16,19 +16,17 @@ export class DropdownComponent implements OnChanges {
 
   public label: string;
   public isActive = false;
-  public hiddenList = false;
 
   constructor(private ref: ElementRef) { }
 
   ngOnChanges(): void {
-    this.label = this.items ? this.items.find(item => item.selected === true).label : '';
+    this.label = this.items.length ? this.items.find(item => item.selected === true).label : '';
   }
 
   public action(item: Dropdown) {
     this.value.emit(item.value);
     this.label = item.label;
     this.isActive = false;
-    setTimeout(() => this.hiddenList = !this.hiddenList, 1000);
   }
 
   @HostListener('document:click', ['$event'])
@@ -36,7 +34,6 @@ export class DropdownComponent implements OnChanges {
   public onClick(event) {
     if (!this.ref.nativeElement.contains(event.target)) {
       this.isActive = false;
-      setTimeout(() => this.hiddenList = false, 1000);
     }
   }
 }

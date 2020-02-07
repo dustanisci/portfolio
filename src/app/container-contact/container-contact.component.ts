@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Language } from '@shared/models/Language.enum';
 
 @Component({
   selector: 'app-container-contact',
@@ -9,11 +10,11 @@ import { TranslateService } from '@ngx-translate/core';
 export class ContainerContactComponent implements OnInit {
 
   @Input()
-  public translate: TranslateService;
+  public languageId: Language;
 
   public title: string;
 
-  constructor() {
+  constructor(private translate: TranslateService) {
   }
 
   ngOnInit(): void {

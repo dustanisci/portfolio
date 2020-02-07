@@ -10,15 +10,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class AppComponent implements OnInit {
-
   public multiloader: Loader = {} as Loader;
   public openedMenu = false;
+  public changedLanguage: number;
 
-  constructor(public translate: TranslateService) {
-    translate.setDefaultLang('br');
+  constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     AOS.init();
     this.multiloader.about = true;
     this.multiloader.portfolio = true;

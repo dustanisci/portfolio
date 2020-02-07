@@ -1,10 +1,10 @@
 <div [ngStyle]="{'display': multiloader.navbar === false && multiloader.about === false && multiloader.portfolio === false && multiloader.skills === false ? 'block' : 'none'}">
-  <app-navbar (loader)="multiloader.navbar = false" [translate]="translate" (openedMenu)="openedMenu = $event"></app-navbar>
-  <app-container-about class="mt-100" (loader)="multiloader.about = false" [translate]="translate"></app-container-about>
-  <app-container-skills (loader)="multiloader.skills = false" [translate]="translate"></app-container-skills>
-  <app-container-portfolio (loader)="multiloader.portfolio = false" [translate]="translate"></app-container-portfolio>
-  <app-container-contact [translate]="translate"></app-container-contact>
-  <app-footer [translate]="translate"></app-footer>
+  <app-navbar (loader)="multiloader.navbar = false" (openedMenu)="openedMenu = $event" (changedLanguage)="changedLanguage = $event"></app-navbar>
+  <app-container-about class="mt-100" (loader)="multiloader.about = false" [actionTranslate]="changedLanguage"></app-container-about>
+  <app-container-skills (loader)="multiloader.skills = false" [actionTranslate]="changedLanguage"></app-container-skills>
+  <app-container-portfolio (loader)="multiloader.portfolio = false"></app-container-portfolio>
+  <app-container-contact></app-container-contact>
+  <app-footer></app-footer>
 </div>
 
 <div *ngIf="multiloader.navbar === true || multiloader.about === true || multiloader.portfolio === true || multiloader.skills === true" class="container-loader d-flex vh-100 position-relative align-items-center justify-content-center">

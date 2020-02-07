@@ -11,7 +11,7 @@
     "ENG" : "Inglês"
   },
   "ABOUT": {
-    "QUOTE" : "Para se ter sucesso, é necessário amar de verdade o que se faz. Caso contrário, levando em conta apenas o lado racional, você simplesmente desiste. É o que acontece com a maioria das pessoas.",
+    "QUOTE" : "\"Para se ter sucesso, é necessário amar de verdade o que se faz. Caso contrário, levando em conta apenas o lado racional, você simplesmente desiste. É o que acontece com a maioria das pessoas.\"",
     "SQUARE1" : "Desenvolvedor com mais de 5 anos de experiência, graduado pelo Senac SP e com conhecimentos nas tecnologias atuais do mercado.",
     "SQUARE2" : "Expert no framework Angular, o qual já desenvolveu muitos sites e sistemas internos.",
     "SQUARE3" : "No momento se dedica no inglês e em cursos relacionados da área. Seu próximo objetivo é fazer uma pós-graduação em Big Data ou Inteligência Artificial.",
@@ -23,11 +23,12 @@
     "TEST" : "Teste",
     "GIT" : "Versionamento de código - GIT"
   },
-  "PORTFOLIO" : {
-    "IMAGE" : "Imagem",
-    "OF" : "de" 
-  },
   "FOOTER" : {
     "COPYRIGHT" : "Todos os direitos reservados."
+  },
+  "MODAL" : {
+    "BETTER_VIEW" : "Para ter uma melhor visualização, vire o celular.",
+    "IMAGE" : "Imagem",
+    "OF" : "de" 
   }
 }
