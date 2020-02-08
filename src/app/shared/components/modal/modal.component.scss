@@ -31,9 +31,10 @@
     height: 90%;
 
     .container-img {
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 500px) {
         padding  : 0;
         width    : 100%;
+        max-width: 100%;
         position : absolute;
         left     : 0;
         top      : 50%;
@@ -45,10 +46,11 @@
         max-height: 90%;
         animation : 600ms multiple-opacities-on;
 
-        @media only screen and (max-width: 767px) {
-          width    : 100%;
-          position : relative;
-          max-width: 96%;
+        @media only screen and (max-width: 500px) {
+          width     : auto;
+          position  : relative;
+          max-width : 96%;
+          max-height: 65vh;
         }
 
         &.opacity-effect-before {
@@ -64,29 +66,31 @@
     }
 
     .container-arrow {
-      @media only screen and (max-width: 767px) {
-        position : absolute;
-        width    : 65px;
-        height   : 65px;
-        top      : 75%;
-        transform: translateY(-75%);
+      @media only screen and (max-width: 500px) {
+        position: absolute;
+        width   : 65px;
+        height  : 65px;
+        bottom  : 0;
       }
 
       &:first-child {
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: 500px) {
           left: 30px;
         }
       }
 
       &:last-child {
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: 500px) {
           right: 30px;
         }
       }
 
       i {
-        font-size: 40pt;
-        cursor   : pointer;
+        font-size    : 40pt;
+        cursor       : pointer;
+        border       : 1px solid #FFF;
+        border-radius: 5px;
+        padding      : 10px 20px;
 
         @media only screen and (max-width: 767px) {
           font-size: 20pt;
