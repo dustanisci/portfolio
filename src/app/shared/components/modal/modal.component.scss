@@ -1,17 +1,17 @@
 .container-modal {
   background: rgba(0, 0, 0, 0.7);
-  z-index: 99;
-  top: 0;
-  color: #FFF;
+  z-index   : 99;
+  top       : 0;
+  color     : #FFF;
 
   .container-close {
-    right: 10px;
-    top: 5px;
+    right  : 10px;
+    top    : 5px;
     z-index: 1;
 
     i {
       font-size: 30pt;
-      cursor: pointer;
+      cursor   : pointer;
     }
   }
 
@@ -31,27 +31,62 @@
     height: 90%;
 
     .container-img {
-      img {
-        max-width: 85%;
-        max-height:90%;
-        animation: 600ms multiple-opacities-on;
+      @media only screen and (max-width: 767px) {
+        padding  : 0;
+        width    : 100%;
+        position : absolute;
+        left     : 0;
+        top      : 50%;
+        transform: translateY(-50%);
+      }
 
-        &.opacity-effect-before{
-          opacity: 0;
+      img {
+        max-width : 85%;
+        max-height: 90%;
+        animation : 600ms multiple-opacities-on;
+
+        @media only screen and (max-width: 767px) {
+          width    : 100%;
+          position : relative;
+          max-width: 96%;
+        }
+
+        &.opacity-effect-before {
+          opacity  : 0;
           animation: 600ms multiple-opacities-on;
         }
 
-        &.opacity-effect-after{
-          opacity: 1;
+        &.opacity-effect-after {
+          opacity  : 1;
           animation: 600ms multiple-opacities-on;
         }
       }
     }
 
     .container-arrow {
+      @media only screen and (max-width: 767px) {
+        position : absolute;
+        width    : 65px;
+        height   : 65px;
+        top      : 75%;
+        transform: translateY(-75%);
+      }
+
+      &:first-child {
+        @media only screen and (max-width: 767px) {
+          left: 30px;
+        }
+      }
+
+      &:last-child {
+        @media only screen and (max-width: 767px) {
+          right: 30px;
+        }
+      }
+
       i {
         font-size: 40pt;
-        cursor: pointer;
+        cursor   : pointer;
 
         @media only screen and (max-width: 767px) {
           font-size: 20pt;

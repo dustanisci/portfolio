@@ -6,21 +6,17 @@
         <i (click)="actionClose()" class="icon-remove"></i>
       </div>
 
-      <div class="container-warning col-12 position-absolute text-center mt-5 pt-5">
-        <label>{{ 'MODAL.BETTER_VIEW' | translate }}</label>
-      </div>
-
-      <div class="container-elements col-12 d-flex">
-        <div class="container-arrow col-2 col-sm-1 d-flex align-items-center justify-content-center flex-column">
+      <div class="container-elements col-12 d-sm-flex">
+        <div class="container-arrow col-sm-1 d-flex align-items-center justify-content-center flex-column">
           <i [ngStyle]="{'opacity': index === 0 ? '0.3' : '1'}" (click)="previousImage()" class="icon-chevron-left"></i>
         </div>
 
-        <div class="container-img col-8 col-sm-10 d-flex align-items-center justify-content-center flex-column">
+        <div class="container-img col-sm-10 d-flex align-items-center justify-content-center flex-column">
           <img #img class="img-fluid begin-opacity-effect" *ngIf="project && project.galerias"
             src="{{ project.galerias[index].url_galeria }}" />
         </div>
 
-        <div class="container-arrow col-2 col-sm-1 d-flex align-items-center justify-content-center flex-column">
+        <div class="container-arrow col-sm-1 d-flex align-items-center justify-content-center flex-column">
           <i *ngIf="project && project.galerias" [ngStyle]="{'opacity': (this.project.galerias.length === index + 1) ? '0.3' : '1'}" (click)="nextImage()"
             class="icon-chevron-right"></i>
         </div>
