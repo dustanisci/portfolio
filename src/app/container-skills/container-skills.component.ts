@@ -48,8 +48,7 @@ export class ContainerSkillsComponent implements OnInit {
           'Bootstrap',
           'Material',
           'Materialize',
-          'Foundation',
-          'SEO'
+          'Foundation'
         ]
       },
       {
@@ -72,8 +71,10 @@ export class ContainerSkillsComponent implements OnInit {
         technology: res['SKILLS.OTHERS'],
         value: [
           res['SKILLS.GIT'],
+          'Scrum',
           'Docker',
-          'Google Analytics'
+          'Google Analytics',
+          'SEO'
         ]
       },
       {
