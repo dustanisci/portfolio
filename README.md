@@ -1,6 +1,6 @@
 # Portfólio
 
-<b>Descrição:</b> Portfólio pessoal e informativo, onde eu conto um pouco mais de mim e meus objetivos em minha carreira.
+<b>Descrição:</b> Portfólio pessoal e informativo, onde eu conto um pouco mais de mim e meus objetivos da minha carreira.
 
 <b>Endereço de acesso:</b> https://eduardostanisci.com.br/
 
