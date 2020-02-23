@@ -1,4 +1,17 @@
-# Portfólio 
-2020 - Portfólio pessoal, utilizado Angular 8, javascript, scss / css, palette, bootstrap e AOS.
+# Implementação de Lazy Loading
 
-Este site pode ser consultado no endereço: https://eduardostanisci.com.br
+<b>Descrição:</b> Portfólio pessoal e informativo, onde eu conto um pouco mais de mim e meus objetivos em minha carreira.
+
+<b>Endereço de acesso:</b> https://eduardostanisci.com.br/
+
+<b>Tecnologias utilizadas:</b>
+<ul>
+  <li>Angular 9</li>
+  <li>HTML 5 </li>
+  <li>SCSS / CSS 3</li>
+  <li>Palette</li>
+  <li>Bootstrap</li>
+  <li>AOS</li>
+  <li>TypeScript</li>
+  <li>JavaScript</li>
+</ul>
