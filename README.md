@@ -1,4 +1,4 @@
-# Implementação de Lazy Loading
+# Portfólio
 
 <b>Descrição:</b> Portfólio pessoal e informativo, onde eu conto um pouco mais de mim e meus objetivos em minha carreira.
 
