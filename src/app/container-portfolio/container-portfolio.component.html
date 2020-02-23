@@ -10,7 +10,7 @@
       <div class="row d-lg-flex align-items-md-center justify-content-md-between">
 
         <ng-container *ngIf="!loaderPortfolio">
-          <div class="col-lg-5 col-12 mb-lg-5 pb-lg-5" *ngFor="let project of portfolioTwoItems"
+          <div class="col-lg-5 col-12 pb-lg-6" *ngFor="let project of portfolioTwoItems"
             (click)="actionModal(project)">
             <img data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="800" *ngIf="project"
               class="pb-3 img-fluid" src="{{ project.galerias[0].url_galeria }}" />
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <nav class="container-pagination col-12 mt-4 mt-sm-3">
+    <nav class="container-pagination col-12">
       <ul #list class="pagination justify-content-center row">
         <li *ngFor="let item of [].constructor(index); let i = index" [ngClass]="{'active': i === 0}"
           (click)="setItemsByIndex(i); setClassActive(i+1);"

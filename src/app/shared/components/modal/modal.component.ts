@@ -25,7 +25,7 @@ export class ModalComponent {
     this.project = project;
   }
 
-  @ViewChild('img', { static: false })
+  @ViewChild('img')
   public img: ElementRef;
 
   public index = 0;
@@ -50,7 +50,6 @@ export class ModalComponent {
   public nextImage(): void {
     const auxIndex: number = this.index + 1;
     if (this.project.galerias[auxIndex].url_galeria.length) {
-      this.opacity();
       this.index++;
     }
   }
@@ -58,18 +57,8 @@ export class ModalComponent {
   public previousImage(): void {
     const auxIndex: number = this.index - 1;
     if (this.project.galerias[auxIndex].url_galeria.length) {
-      this.opacity();
       this.index--;
     }
-  }
-
-  private opacity(): void {
-    this.renderer.removeClass(this.img.nativeElement, 'opacity-effect-after');
-    this.renderer.addClass(this.img.nativeElement, 'opacity-effect-before');
-    setTimeout(() => {
-      this.renderer.removeClass(this.img.nativeElement, 'opacity-effect-before');
-      this.renderer.addClass(this.img.nativeElement, 'opacity-effect-after');
-    }, 350);
   }
 
   public actionClose(): void {

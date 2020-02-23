@@ -20,7 +20,7 @@ export class ContainerPortfolioComponent implements OnInit {
   @Output()
   public loader: EventEmitter<void> = new EventEmitter<void>();
 
-  @ViewChild('list', { static: false })
+  @ViewChild('list')
   public list: ElementRef;
 
   constructor(
