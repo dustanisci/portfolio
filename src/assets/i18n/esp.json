@@ -11,11 +11,11 @@
     "ENG" : "Ingles"
   },
   "ABOUT": {
-    "QUOTE" : "\"Para tener éxito, es necesario amar verdaderamente lo que haces. De lo contrario, teniendo en cuenta solo el lado racional, simplemente te rindes. Esto es lo que le sucede a la mayoría de las personas.\"",
+    "QUOTE" : "\"Hay dos tipos de personas que te dirán que no puedes hacer una diferencia en este mundo: los que tienen miedo de intentarlo y los que temen que te lleves bien.\"",
     "SQUARE1" : "Desarrollador con más de 5 años de experiencia, graduado de Senac SP y con conocimiento de las tecnologías actuales del mercado.",
     "SQUARE2" : "Experto en tecnología angular, que ya ha desarrollado muchos sitios web y sistemas internos.",
     "SQUARE3" : "Actualmente está estudiando inglés y cursos relacionados en el campo. Su próximo objetivo es hacer un posgrado en \"Big Data\" o \"Inteligencia Artificial\"",
-    "SQUARE4" : "Algunos de sus pasatiempos son dibujar, viajar y juegos de pensamiento lógico :P" 
+    "SQUARE4" : "Algunos de sus pasatiempos son dibujar, viajar y juegos de pensamiento lógico :P"
   },
   "SKILLS" : {
     "OTHERS" : "Otros",
@@ -28,6 +28,6 @@
   },
   "MODAL" : {
     "IMAGE" : "Foto",
-    "OF" : "de" 
+    "OF" : "de"
   }
 }
