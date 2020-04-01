@@ -30,8 +30,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     // this.dataNavbar();
     this.loader.emit();
-    this.translate.setDefaultLang('en');
-    this.translateAction(Language.English);
+    this.translateAction(Language.Portuguese);
   }
 
   private lockScrollBody(): void {
