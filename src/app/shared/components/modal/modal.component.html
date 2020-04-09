@@ -12,20 +12,20 @@
         </div>
 
         <div class="container-img col-8 col-sm-10 d-flex align-items-center justify-content-center flex-column">
-          <img #img class="img-fluid begin-opacity-effect" *ngIf="project && project.galerias"
-            src="{{ project.galerias[index].url_galeria }}" />
+          <img #img class="img-fluid begin-opacity-effect" *ngIf="project && project.galleries"
+            src="{{ project.galleries[index].urlGallery }}" />
         </div>
 
         <div class="container-arrow col-2 col-sm-1 d-flex align-items-center justify-content-center flex-column">
-          <i *ngIf="project && project.galerias" [ngStyle]="{'opacity': (this.project.galerias.length === index + 1) ? '0.3' : '1'}" (click)="nextImage()"
+          <i *ngIf="project && project.galleries" [ngStyle]="{'opacity': (this.project.galleries.length === index + 1) ? '0.3' : '1'}" (click)="nextImage()"
             class="icon-chevron-right"></i>
         </div>
       </div>
 
       <div class="container-quantity col-12 d-flex align-items-center justify-content-center">
         <div class="row">
-          <div *ngIf="project && project.galerias" class="mb-3">
-            {{ 'MODAL.IMAGE' | translate }} {{ index + 1 }} {{ 'MODAL.OF' | translate }} {{ project.galerias.length }}
+          <div *ngIf="project && project.galleries" class="mb-3">
+            {{ 'MODAL.IMAGE' | translate }} {{ index + 1 }} {{ 'MODAL.OF' | translate }} {{ project.galleries.length }}
           </div>
         </div>
       </div>

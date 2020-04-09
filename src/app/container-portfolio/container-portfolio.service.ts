@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ApiService } from '@shared/api/api.service';
 import { endpoint } from 'src/environments/environment';
+import { mockyPortfolio } from '@shared/mocky/mocky-portfolio';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class ContainerPortfolioService {
   constructor(private apiService: ApiService) { }
 
   public dataPortfolio(): Observable<object> {
-    return this.apiService.get(endpoint.portfolio);     
+    return of(mockyPortfolio);
+    // return this.apiService.get(endpoint.portfolio);     
   }
 }

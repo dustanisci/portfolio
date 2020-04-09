@@ -13,10 +13,10 @@
           <div class="col-lg-5 col-12 pb-lg-6" *ngFor="let project of portfolioTwoItems"
             (click)="actionModal(project)">
             <img data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="800" *ngIf="project"
-              class="pb-3 img-fluid" src="{{ project.galerias[0].url_galeria }}" />
+              class="pb-3 img-fluid" src="{{ project.galleries[0].urlGallery }}" />
             <label *ngIf="project" class="pt-2 d-block font-weight-bolder text-center">{{ 'MODAL.IMAGE' | translate }} 1
               {{ 'MODAL.OF' | translate }}
-              {{ project.galerias.length }}</label>
+              {{ project.galleries.length }}</label>
           </div>
         </ng-container>
 

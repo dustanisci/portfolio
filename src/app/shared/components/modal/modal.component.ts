@@ -49,14 +49,14 @@ export class ModalComponent {
 
   public nextImage(): void {
     const auxIndex: number = this.index + 1;
-    if (this.project.galerias[auxIndex].url_galeria.length) {
+    if (this.project.galleries[auxIndex].urlGallery.length) {
       this.index++;
     }
   }
 
   public previousImage(): void {
     const auxIndex: number = this.index - 1;
-    if (this.project.galerias[auxIndex].url_galeria.length) {
+    if (this.project.galleries[auxIndex].urlGallery.length) {
       this.index--;
     }
   }
