@@ -37,7 +37,6 @@
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/style/fonts.scss",
-              "src/assets/style/palette.scss",
               "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []
@@ -111,7 +110,6 @@
               "src/assets/style/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/style/fonts.scss",
-              "src/assets/style/palette.scss",
               "src/assets/font/fontawesome/font-awesome.min.css"
             ],
             "scripts": []

@@ -1,16 +1,14 @@
-@import "./../assets/style/palette.scss";
-
 app-container-geometric {
   .container {
     .container-title {
       .portfolio-title {
         &:before {
-          background: palette-color('primary', '4');
+          background: var(--theme-pink);
           position: absolute;
         }
 
         &::first-letter {
-          color: palette-color('primary', '4');
+          color: var(--theme-pink);
           font-weight: bolder;
         }
       }

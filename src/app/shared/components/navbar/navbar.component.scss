@@ -1,5 +1,3 @@
-@import "./../assets/style/palette.scss";
-
 nav {
   z-index: 2;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
@@ -50,13 +48,13 @@ nav {
 
       li {
         a {
-          color: palette-color('primary', '2');
+          color: var(--theme-blue);
           transition: 200ms linear;
           cursor: pointer;
 
           &:hover {
             transition: 200ms linear;
-            color: palette-color('primary', '3');
+            color: var(--theme-light-blue);
           }
 
           @media only screen and (max-width: 767px) {
@@ -69,7 +67,7 @@ nav {
     }
 
     &.openMenu {
-      background: palette-color('primary', '4');
+      background: var(--theme-pink);
       transition: 250ms ease;
       width: 100%;
       overflow-y: scroll;
@@ -95,11 +93,11 @@ nav {
       font-size: 30px;
 
       &.icon-reorder {
-        color: palette-color('primary', '1');
+        color: var(--theme-navy-blue);
       }
 
       &.icon-remove {
-        color: palette-color('primary', '1');
+        color: var(--theme-navy-blue);
       }
     }
   }

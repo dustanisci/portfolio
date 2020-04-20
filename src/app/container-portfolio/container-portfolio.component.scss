@@ -1,15 +1,13 @@
-@import "./../assets/style/palette.scss";
-
 .container {
   .container-title {
     .portfolio-title {
       &:before {
-        background: palette-color('primary', '1');
+        background: var(--theme-navy-blue);
         position: absolute;
       }
 
       &::first-letter {
-        color: palette-color('primary', '1');
+        color: var(--theme-navy-blue);
         font-weight: bolder;
       }
     }
@@ -32,7 +30,7 @@
       }
 
       img {
-        border-bottom: 4px solid palette-color('primary', '2');
+        border-bottom: 4px solid var(--theme-blue);
         cursor: pointer;
       }
 
@@ -55,7 +53,7 @@
 
       a {
         color: #FFF;
-        background: palette-color('primary', '2');
+        background: var(--theme-blue);
         transition: 250ms ease;
         cursor: pointer;
         border: 1px solid rgba(0, 0, 0, 0.14);
@@ -65,17 +63,17 @@
         }
 
         &:hover {
-          background: palette-color('primary', '4');
+          background: var(--theme-pink);
           transition: 250ms ease;
         }
       }
 
       &.active {
         a {
-          background: palette-color('primary', '4');
+          background: var(--theme-pink);
 
           &:focus {
-            background: palette-color('primary', '4');
+            background: var(--theme-pink);
           }
         }
       }

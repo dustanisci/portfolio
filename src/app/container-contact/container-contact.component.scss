@@ -1,5 +1,3 @@
-@import "./../assets/style/palette.scss";
-
 app-container-geometric {
   .container {
     .container-title {
@@ -24,7 +22,7 @@ app-container-geometric {
         transition: 300ms linear;
 
         &:hover {
-          border-bottom: 2px solid palette-color('primary', '2');
+          border-bottom: 2px solid var(--theme-blue);
           transition: 300ms linear;
         }
       }
@@ -40,7 +38,7 @@ app-container-geometric {
         transition: 300ms linear;
 
         &:hover {
-          background: palette-color('primary', '1');
+          background: var(--theme-navy-blue);
           transition: 300ms linear;
         }
 

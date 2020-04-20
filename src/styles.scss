@@ -28,3 +28,16 @@ body{
     bottom: -10px;
   }
 }
+
+:root {
+  --theme-navy-blue:#00146e;
+  --theme-blue:#0041a0;
+  --theme-light-blue:#00e1e1;
+  --theme-pink: #eb92be;
+
+  --theme-navy-blue-10:rgba(0, 20, 110, 0.1);
+  --theme-blue-10:rgba(0, 65, 160, 0.1);
+  --theme-light-blue-10:rgba(0, 225, 225, 0.1);
+  --theme-pink-10: rgba(235, 146, 190, 0.1);
+  
+}
