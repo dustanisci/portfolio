@@ -9,7 +9,6 @@
   <li>Angular 9</li>
   <li>HTML 5 </li>
   <li>SCSS / CSS 3</li>
-  <li>Palette</li>
   <li>Bootstrap</li>
   <li>AOS</li>
   <li>TypeScript</li>
