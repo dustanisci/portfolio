@@ -6,7 +6,7 @@
 
 <b>Tecnologias utilizadas:</b>
 <ul>
-  <li>Angular 9</li>
+  <li>Angular 12</li>
   <li>HTML 5 </li>
   <li>SCSS / CSS 3</li>
   <li>Bootstrap</li>
