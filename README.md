@@ -2,7 +2,7 @@
 
 <b>Descrição:</b> Portfólio pessoal e informativo, onde eu conto um pouco mais de mim e meus objetivos da minha carreira.
 
-<b>Endereço de acesso:</b> https://eduardostanisci.com.br/
+<b>Endereço de acesso:</b> https://dustanisci.github.io/portfolio-angular12/
 
 <b>Tecnologias utilizadas:</b>
 <ul>
